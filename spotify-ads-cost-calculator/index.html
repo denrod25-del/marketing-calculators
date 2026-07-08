@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0B1020">
+<title>Spotify Ads Cost Calculator (2026) — Streaming Audio CPM and ROI</title>
+<meta name="description" content="Free Spotify ads cost calculator. Estimate impressions, leads and ROI from your streaming audio budget by format, with 2026 CPM benchmarks and the $250 self-serve minimum.">
+<link rel="canonical" href="https://denrod25-del.github.io/marketing-calculators/spotify-ads-cost-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Spotify Ads Cost Calculator (2026) — Streaming Audio CPM and ROI">
+<meta property="og:description" content="Free Spotify ads cost calculator. Estimate impressions, leads and ROI from your streaming audio budget by format, with 2026 CPM benchmarks and the $250 self-serve minimum.">
+<meta property="og:url" content="https://denrod25-del.github.io/marketing-calculators/spotify-ads-cost-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0B1020;color:#E6EAF3;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;padding:16px}
+.wrap{max-width:640px;margin:0 auto}
+a{color:#8FA8FF;text-decoration:none}
+header.top{text-align:center;padding:12px 0 4px}
+header.top .brand{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#6D8BFF;font-weight:700}
+h1{font-size:1.42rem;font-weight:800;line-height:1.22;margin:10px 0 8px;text-align:center}
+.lead{color:#9AA6BF;font-size:.95rem;text-align:center}
+.card{background:#141B2E;border:1px solid #232C44;border-radius:16px;padding:18px;margin:14px 0}
+.card h2{font-size:1.1rem;color:#6D8BFF;margin-bottom:6px}
+.sub{color:#9AA6BF;font-size:.85rem;margin-bottom:12px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:.82rem;color:#C7D0E4;margin-bottom:5px;font-weight:600}
+.inp{display:flex;align-items:center;background:#0B1020;border:1px solid #2A3653;border-radius:10px;overflow:hidden}
+.inp span{padding:0 11px;color:#94A3B8;background:#1A2338;align-self:stretch;display:flex;align-items:center;font-size:.9rem}
+.inp input,.inp select{flex:1;background:transparent;border:none;color:#F1F5F9;padding:11px;font-size:.95rem;outline:none;width:100%}
+.inp select{cursor:pointer}
+.hint{font-size:.78rem;color:#34D399;margin-top:5px;font-weight:600}
+.opt{font-size:.78rem;color:#64748B;margin:14px 0 8px;text-transform:uppercase;letter-spacing:.05em}
+.btn{width:100%;padding:13px;background:#6D8BFF;color:#0B1020;font-weight:800;font-size:.98rem;border:none;border-radius:11px;cursor:pointer;margin-top:4px}
+.btn:hover{background:#87a0ff}
+.result{display:none;margin-top:14px;border-top:1px dashed #2A3653;padding-top:14px}
+.result.show{display:block}
+.big{text-align:center;margin-bottom:12px}
+.big .n{font-size:2.1rem;font-weight:800;color:#34D399;line-height:1}
+.big .n.bad{color:#F87171}.big .n.mid{color:#F4B942}
+.big .l{color:#9AA6BF;font-size:.82rem;margin-top:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:#0B1020;border:1px solid #232C44;border-radius:10px;padding:11px}
+.stat .v{font-size:1.05rem;font-weight:700}
+.stat .k{font-size:.7rem;color:#94A3B8;margin-top:2px;text-transform:uppercase;letter-spacing:.03em}
+.guide h2{font-size:1.08rem;color:#6D8BFF;margin:18px 0 6px}
+.guide p{color:#C7D0E4;font-size:.9rem;margin-bottom:8px}
+.guide table{width:100%;border-collapse:collapse;font-size:.82rem;margin:8px 0}
+.guide th,.guide td{border:1px solid #2A3653;padding:7px 9px;text-align:left}
+.guide th{background:#1A2338;color:#6D8BFF}
+.faq .q{font-weight:700;color:#E6EAF3;font-size:.92rem;margin-top:10px}
+.faq .a{color:#C7D0E4;font-size:.88rem}
+.email{background:#141B2E;border:1px solid #2A3653;border-radius:16px;padding:18px;text-align:center;margin:16px 0}
+.email h3{font-size:1.05rem;margin-bottom:6px}
+.email p{color:#9AA6BF;font-size:.86rem;margin-bottom:12px}
+.email form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.email input[type=email]{flex:1;min-width:190px;background:#0B1020;border:1px solid #2A3653;border-radius:10px;color:#F1F5F9;padding:12px;font-size:.95rem}
+.email button{background:#6D8BFF;color:#0B1020;font-weight:800;border:none;border-radius:10px;padding:12px 18px;cursor:pointer}
+.toolnav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0}
+.toolnav a{background:#141B2E;border:1px solid #232C44;border-radius:9px;padding:8px 12px;font-size:.8rem}
+.note{font-size:.75rem;color:#64748B;margin-top:10px}
+footer{text-align:center;color:#5B6480;font-size:.75rem;padding:22px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">Marketing Calculators</div></header>
+<h1>Spotify Ads Cost Calculator</h1>
+<p class="lead">Streaming audio ad cost — impressions, leads and ROI, with 2026 CPMs.</p>
+<div class="card">
+  <h2>Estimate your Spotify campaign</h2>
+  <div class="sub">Spotify Ad Studio is self-serve with a $250 minimum; priced on CPM.</div>
+  <div class="field"><label>Format (sets CPM)</label><div class="inp"><select id="fmt" onchange="setCpm()"></select></div><div class="hint" id="hint"></div></div>
+  <div class="field"><label>Budget ($)</label><div class="inp"><span>$</span><input type="number" id="budget" value="1000"></div></div>
+  <div class="field"><label>CPM — cost per 1,000 impressions ($)</label><div class="inp"><span>$</span><input type="number" id="cpm" value="20" step="1"></div></div>
+  <div class="field"><label>Response rate (% of listeners who act)</label><div class="inp"><input type="number" id="resp" value="0.4" step="0.1"><span>%</span></div></div>
+  <div class="field"><label>Lead-to-customer close rate (%)</label><div class="inp"><input type="number" id="close" value="20"><span>%</span></div></div>
+  <div class="field"><label>Average sale value ($)</label><div class="inp"><span>$</span><input type="number" id="sale" value="300"></div></div>
+  <button class="btn" onclick="calc()">Calculate cost &amp; ROI</button>
+  <div class="result" id="res"></div>
+</div>
+<div class="card guide">
+  <h2>How much do Spotify ads cost?</h2><p>Spotify runs on a CPM model: audio ads typically cost <strong>$15–$25 per 1,000 impressions</strong> and video ads $20–$35. The self-serve Ad Studio has a <strong>$250 minimum</strong>, which reaches roughly 10,000–16,000 listeners. You can target by age, location, genre, playlist and even real-world context like workouts.</p>
+  <h2>Spotify ad benchmarks (2026)</h2><table><tr><th>Format</th><th>Typical CPM</th></tr><tr><td>Audio ad (:30)</td><td>$15–$25</td></tr><tr><td>Podcast ad on Spotify</td><td>$18–$30</td></tr><tr><td>Video / vertical video</td><td>$20–$35</td></tr></table>
+  <h2>Making audio ads work</h2><p>Listeners can't click a running audio ad, so give a memorable call to action — a short URL, a promo code, or &quot;search [brand].&quot; Keep it to one message, use a real voice, and geo-target your service area. Pair audio with a companion display card for the moment listeners glance at their phone.</p>
+  <h2>Frequently asked questions</h2>
+  <div class="faq">
+    <div class="q">How much do Spotify ads cost?</div>
+    <div class="a">About $15–$25 CPM for audio and $20–$35 for video, with a $250 self-serve minimum reaching roughly 10,000–16,000 listeners.</div>
+    <div class="q">What is the minimum Spotify ad budget?</div>
+    <div class="a">$250 for a self-serve Ad Studio campaign.</div>
+    <div class="q">How do I track Spotify ad results?</div>
+    <div class="a">Use a memorable short URL or promo code and geo-targeting, since listeners can't click a running audio ad.</div>
+  </div>
+  <p class="note">Estimates for planning only.</p>
+</div>
+<div class="email"><h3>Get more free marketing calculators</h3><p>New tools and benchmarks, straight to your inbox. No spam.</p><form action="https://bsymbolic.us16.list-manage.com/subscribe/post?u=878f465eb321da5bb4ba0d116&amp;id=7fc148b6b0" method="post" target="_blank" novalidate><input type="email" name="EMAIL" placeholder="you@email.com" required><div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_878f465eb321da5bb4ba0d116_7fc148b6b0" tabindex="-1" value=""></div><button type="submit">Get updates</button></form></div>
+<div class="toolnav">
+  <a href="/marketing-calculators/">All calculators</a>
+  <a href="/marketing-calculators/podcast-advertising-cost-calculator/">Podcast ads</a>
+  <a href="/marketing-calculators/radio-advertising-cost-calculator/">Radio cost</a>
+</div>
+<footer>Marketing Calculators &middot; free tools for planning campaigns</footer>
+</div>
+<script>var money=function(n){return '$'+Math.round(n).toLocaleString();};var money2=function(n){return '$'+(n).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});};var num=function(n){return Math.round(n).toLocaleString();};var V=function(id){return parseFloat(document.getElementById(id).value)||0;};
+var CPM={"Audio ad (:30)":20,"Video / vertical video ad":28,"Podcast ad on Spotify":24};var sel=document.getElementById('fmt');for(var k in CPM){var o=document.createElement('option');o.value=k;o.textContent=k;sel.appendChild(o);}sel.value="Audio ad (:30)";
+function setCpm(){var v=CPM[document.getElementById('fmt').value];document.getElementById('cpm').value=v;document.getElementById('hint').textContent='Typical CPM: '+money2(v);}setCpm();
+function calc(){var cost=V('budget');var imp=V('cpm')>0?cost/V('cpm')*1000:0;var leads=imp*V('resp')/100;var cust=leads*V('close')/100;var rev=cust*V('sale');var roi=cost>0?(rev-cost)/cost*100:0;
+var html='<div class="big"><div class="n">'+num(imp)+'</div><div class="l">impressions ('+(roi>=0?'+':'')+Math.round(roi)+'% ROI)</div></div><div class="grid">'
++'<div class="stat"><div class="v">'+money2(V('cpm'))+'</div><div class="k">CPM</div></div>'
++'<div class="stat"><div class="v">'+num(leads)+'</div><div class="k">Leads</div></div>'
++'<div class="stat"><div class="v">'+(leads>0?money(cost/leads):'—')+'</div><div class="k">Cost / lead</div></div>'
++'<div class="stat"><div class="v">'+num(cust)+'</div><div class="k">Customers</div></div>'
++'<div class="stat"><div class="v">'+money(rev)+'</div><div class="k">Revenue</div></div>'
++'<div class="stat"><div class="v">'+money(cost)+'</div><div class="k">Budget</div></div></div>';
+document.getElementById('res').innerHTML=html;document.getElementById('res').classList.add('show');}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Spotify Ads Cost Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://denrod25-del.github.io/marketing-calculators/spotify-ads-cost-calculator/","description":"Free Spotify ads cost calculator. Estimate impressions, leads and ROI from your streaming audio budget by format, with 2026 CPM benchmarks and the $250 self-serve minimum."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much do Spotify ads cost?","acceptedAnswer":{"@type":"Answer","text":"About $15–$25 CPM for audio and $20–$35 for video, with a $250 self-serve minimum reaching roughly 10,000–16,000 listeners."}},{"@type":"Question","name":"What is the minimum Spotify ad budget?","acceptedAnswer":{"@type":"Answer","text":"$250 for a self-serve Ad Studio campaign."}},{"@type":"Question","name":"How do I track Spotify ad results?","acceptedAnswer":{"@type":"Answer","text":"Use a memorable short URL or promo code and geo-targeting, since listeners can't click a running audio ad."}}]}</script>
+</body>
+</html>
