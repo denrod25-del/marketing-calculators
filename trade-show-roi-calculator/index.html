@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0B1020">
+<title>Trade Show / Event ROI Calculator — Cost, Leads, Revenue and Return</title>
+<meta name="description" content="Free trade show and event ROI calculator. Add booth, travel and staff costs, then leads, close rate and average sale to see cost per lead, revenue and ROI from your event.">
+<link rel="canonical" href="https://denrod25-del.github.io/marketing-calculators/trade-show-roi-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Trade Show / Event ROI Calculator">
+<meta property="og:description" content="Calculate event cost, cost per lead, revenue and ROI from a trade show or expo.">
+<meta property="og:url" content="https://denrod25-del.github.io/marketing-calculators/trade-show-roi-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0B1020;color:#E6EAF3;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;padding:16px}
+.wrap{max-width:640px;margin:0 auto}
+a{color:#8FA8FF;text-decoration:none}
+header.top{text-align:center;padding:12px 0 4px}
+header.top .brand{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#6D8BFF;font-weight:700}
+h1{font-size:1.42rem;font-weight:800;line-height:1.22;margin:10px 0 8px;text-align:center}
+.lead{color:#9AA6BF;font-size:.95rem;text-align:center}
+.card{background:#141B2E;border:1px solid #232C44;border-radius:16px;padding:18px;margin:14px 0}
+.card h2{font-size:1.1rem;color:#6D8BFF;margin-bottom:6px}
+.sub{color:#9AA6BF;font-size:.85rem;margin-bottom:12px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:.82rem;color:#C7D0E4;margin-bottom:5px;font-weight:600}
+.inp{display:flex;align-items:center;background:#0B1020;border:1px solid #2A3653;border-radius:10px;overflow:hidden}
+.inp span{padding:0 11px;color:#94A3B8;background:#1A2338;align-self:stretch;display:flex;align-items:center;font-size:.9rem}
+.inp input{flex:1;background:transparent;border:none;color:#F1F5F9;padding:11px;font-size:.95rem;outline:none;width:100%}
+.opt{font-size:.78rem;color:#64748B;margin:14px 0 8px;text-transform:uppercase;letter-spacing:.05em}
+.btn{width:100%;padding:13px;background:#6D8BFF;color:#0B1020;font-weight:800;font-size:.98rem;border:none;border-radius:11px;cursor:pointer;margin-top:4px}
+.btn:hover{background:#87a0ff}
+.result{display:none;margin-top:14px;border-top:1px dashed #2A3653;padding-top:14px}
+.result.show{display:block}
+.big{text-align:center;margin-bottom:12px}
+.big .n{font-size:2.1rem;font-weight:800;line-height:1}
+.big .n.good{color:#34D399}.big .n.bad{color:#F87171}.big .n.mid{color:#6D8BFF}
+.big .l{color:#9AA6BF;font-size:.82rem;margin-top:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:#0B1020;border:1px solid #232C44;border-radius:10px;padding:11px}
+.stat .v{font-size:1.05rem;font-weight:700}
+.stat .k{font-size:.7rem;color:#94A3B8;margin-top:2px;text-transform:uppercase;letter-spacing:.03em}
+.guide h2{font-size:1.08rem;color:#6D8BFF;margin:18px 0 6px}
+.guide p{color:#C7D0E4;font-size:.9rem;margin-bottom:8px}
+.faq .q{font-weight:700;color:#E6EAF3;font-size:.92rem;margin-top:10px}
+.faq .a{color:#C7D0E4;font-size:.88rem}
+.email{background:#141B2E;border:1px solid #2A3653;border-radius:16px;padding:18px;text-align:center;margin:16px 0}
+.email h3{font-size:1.05rem;margin-bottom:6px}
+.email p{color:#9AA6BF;font-size:.86rem;margin-bottom:12px}
+.email form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.email input[type=email]{flex:1;min-width:190px;background:#0B1020;border:1px solid #2A3653;border-radius:10px;color:#F1F5F9;padding:12px;font-size:.95rem}
+.email button{background:#6D8BFF;color:#0B1020;font-weight:800;border:none;border-radius:10px;padding:12px 18px;cursor:pointer}
+.toolnav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0}
+.toolnav a{background:#141B2E;border:1px solid #232C44;border-radius:9px;padding:8px 12px;font-size:.8rem}
+.note{font-size:.75rem;color:#64748B;margin-top:10px}
+footer{text-align:center;color:#5B6480;font-size:.75rem;padding:22px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">Marketing Calculators</div></header>
+<h1>Trade Show / Event ROI Calculator</h1>
+<p class="lead">All-in event cost, cost per lead, revenue and ROI from a booth, expo or home show.</p>
+
+<div class="card">
+  <h2>Calculate your event ROI</h2>
+  <div class="sub">Add every cost, then the leads you expect and how they close.</div>
+  <div class="field"><label>Booth / space + materials ($)</label><div class="inp"><span>$</span><input type="number" id="booth" value="4000"></div></div>
+  <div class="field"><label>Travel, lodging &amp; shipping ($)</label><div class="inp"><span>$</span><input type="number" id="travel" value="1500"></div></div>
+  <div class="field"><label>Staff cost (wages + time) ($)</label><div class="inp"><span>$</span><input type="number" id="staff" value="2000"></div></div>
+  <div class="field"><label>Other costs (giveaways, meals) ($)</label><div class="inp"><span>$</span><input type="number" id="other" value="500"></div></div>
+  <div class="opt">Results</div>
+  <div class="field"><label>Leads collected</label><div class="inp"><input type="number" id="leads" value="120"></div></div>
+  <div class="field"><label>Lead-to-customer close rate (%)</label><div class="inp"><input type="number" id="close" value="15"><span>%</span></div></div>
+  <div class="field"><label>Average sale value ($)</label><div class="inp"><span>$</span><input type="number" id="sale" value="900"></div></div>
+  <button class="btn" onclick="calc()">Calculate event ROI</button>
+  <div class="result" id="res"></div>
+</div>
+
+<div class="card guide">
+  <h2>How to calculate trade show ROI</h2>
+  <p>Add up the full cost — booth space, materials, travel, lodging, shipping, staff time and giveaways — then project revenue from the leads you collect: <strong>leads × close rate × average sale</strong>. ROI is <strong>(revenue − total cost) ÷ total cost × 100</strong>. Cost per lead is total cost divided by leads collected.</p>
+  <h2>Don't forget the hidden costs</h2>
+  <p>Staff time is the most-missed line item. If three people work a two-day show, that's real payroll and opportunity cost. Include it, or your ROI will look better than reality. On the upside, events often produce longer-term referrals that a single-campaign ROI won't capture.</p>
+  <h2>How to improve event ROI</h2>
+  <p>Pick shows where your actual buyers gather (home &amp; garden shows for homeowners, lunch-and-learns for B2B referrers), capture leads digitally with a fast follow-up sequence, and offer a reason to act on the spot — a free assessment or a show-only offer. Speed of follow-up after the event is the biggest driver of close rate.</p>
+  <h2>Frequently asked questions</h2>
+  <div class="faq">
+    <div class="q">What is a good trade show ROI?</div>
+    <div class="a">It varies, but aim to at least cover cost several times over once leads close. Include staff time so the number is honest, and remember events also seed referrals.</div>
+    <div class="q">How do I measure event leads?</div>
+    <div class="a">Capture contacts digitally at the booth, tag them by event, and track how many book and close so you can attribute revenue.</div>
+    <div class="q">Which events are worth it?</div>
+    <div class="a">Ones where your buyers actually are. For home services, consumer home &amp; garden shows and expos usually beat generic business events.</div>
+  </div>
+  <p class="note">Estimates for planning only.</p>
+</div>
+
+<div class="email">
+  <h3>Get more free marketing calculators</h3>
+  <p>New tools and benchmarks, straight to your inbox. No spam.</p>
+  <form action="https://bsymbolic.us16.list-manage.com/subscribe/post?u=878f465eb321da5bb4ba0d116&amp;id=7fc148b6b0" method="post" target="_blank" novalidate>
+    <input type="email" name="EMAIL" placeholder="you@email.com" required>
+    <div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_878f465eb321da5bb4ba0d116_7fc148b6b0" tabindex="-1" value=""></div>
+    <button type="submit">Get updates</button>
+  </form>
+</div>
+
+<div class="toolnav">
+  <a href="/marketing-calculators/">All calculators</a>
+  <a href="/marketing-calculators/cost-per-lead-calculator/">Cost per lead</a>
+  <a href="/marketing-calculators/marketing-roi-calculator/">Marketing ROI</a>
+</div>
+<footer>Marketing Calculators · free tools for planning campaigns</footer>
+</div>
+
+<script>
+var money=function(n){return '$'+Math.round(n).toLocaleString();};
+var num=function(n){return Math.round(n).toLocaleString();};
+var V=function(id){return parseFloat(document.getElementById(id).value)||0;};
+function calc(){
+  var cost=V('booth')+V('travel')+V('staff')+V('other');var leads=V('leads');var cust=leads*V('close')/100;var rev=cust*V('sale');
+  var roi=cost>0?(rev-cost)/cost*100:0;var cpl=leads>0?cost/leads:0;
+  var cls=roi>=100?'good':(roi>=0?'mid':'bad');
+  var html='<div class="big"><div class="n '+cls+'">'+(roi>=0?'+':'')+Math.round(roi)+'%</div><div class="l">event ROI ('+money(rev-cost)+' net)</div></div><div class="grid">'
+   +'<div class="stat"><div class="v">'+money(cost)+'</div><div class="k">Total cost</div></div>'
+   +'<div class="stat"><div class="v">'+money(cpl)+'</div><div class="k">Cost / lead</div></div>'
+   +'<div class="stat"><div class="v">'+num(cust)+'</div><div class="k">Customers</div></div>'
+   +'<div class="stat"><div class="v">'+money(rev)+'</div><div class="k">Revenue</div></div>'
+   +'<div class="stat"><div class="v">'+num(leads)+'</div><div class="k">Leads</div></div>'
+   +'<div class="stat"><div class="v">'+(cust>0?money(cost/cust):'—')+'</div><div class="k">Cost / customer</div></div></div>';
+  var el=document.getElementById('res');el.innerHTML=html;el.classList.add('show');
+}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Trade Show Event ROI Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://denrod25-del.github.io/marketing-calculators/trade-show-roi-calculator/","description":"Calculate event cost, cost per lead, revenue and ROI from a trade show or expo."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good trade show ROI?","acceptedAnswer":{"@type":"Answer","text":"It varies, but aim to cover cost several times over once leads close. Include staff time so the number is honest, and remember events also seed referrals."}},{"@type":"Question","name":"How do I measure event leads?","acceptedAnswer":{"@type":"Answer","text":"Capture contacts digitally at the booth, tag them by event, and track how many book and close so you can attribute revenue."}},{"@type":"Question","name":"Which events are worth it?","acceptedAnswer":{"@type":"Answer","text":"Ones where your buyers actually are. For home services, consumer home and garden shows and expos usually beat generic business events."}}]}</script>
+</body>
+</html>
