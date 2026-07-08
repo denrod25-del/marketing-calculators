@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://denrod25-del.github.io/marketing-calculators/sitemap.xml
