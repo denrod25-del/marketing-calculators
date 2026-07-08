@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0B1020">
+<title>Google Local Services Ads (LSA) Cost Calculator — Cost Per Lead by Trade (2026)</title>
+<meta name="description" content="Free Google Local Services Ads cost calculator. Estimate LSA cost per lead by trade (plumbing, HVAC, roofing, electrical), monthly budget, jobs booked and ROI with 2026 benchmarks.">
+<link rel="canonical" href="https://denrod25-del.github.io/marketing-calculators/local-service-ads-cost-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Google Local Services Ads (LSA) Cost Calculator">
+<meta property="og:description" content="Estimate LSA cost per lead, monthly budget, jobs and ROI by trade with 2026 benchmarks.">
+<meta property="og:url" content="https://denrod25-del.github.io/marketing-calculators/local-service-ads-cost-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0B1020;color:#E6EAF3;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;padding:16px}
+.wrap{max-width:640px;margin:0 auto}
+a{color:#8FA8FF;text-decoration:none}
+header.top{text-align:center;padding:12px 0 4px}
+header.top .brand{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#6D8BFF;font-weight:700}
+h1{font-size:1.42rem;font-weight:800;line-height:1.22;margin:10px 0 8px;text-align:center}
+.lead{color:#9AA6BF;font-size:.95rem;text-align:center}
+.card{background:#141B2E;border:1px solid #232C44;border-radius:16px;padding:18px;margin:14px 0}
+.card h2{font-size:1.1rem;color:#6D8BFF;margin-bottom:6px}
+.sub{color:#9AA6BF;font-size:.85rem;margin-bottom:12px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:.82rem;color:#C7D0E4;margin-bottom:5px;font-weight:600}
+.inp{display:flex;align-items:center;background:#0B1020;border:1px solid #2A3653;border-radius:10px;overflow:hidden}
+.inp span{padding:0 11px;color:#94A3B8;background:#1A2338;align-self:stretch;display:flex;align-items:center;font-size:.9rem}
+.inp input,.inp select{flex:1;background:transparent;border:none;color:#F1F5F9;padding:11px;font-size:.95rem;outline:none;width:100%}
+.inp select{cursor:pointer}
+.hint{font-size:.78rem;color:#34D399;margin-top:5px;font-weight:600}
+.btn{width:100%;padding:13px;background:#6D8BFF;color:#0B1020;font-weight:800;font-size:.98rem;border:none;border-radius:11px;cursor:pointer;margin-top:4px}
+.btn:hover{background:#87a0ff}
+.result{display:none;margin-top:14px;border-top:1px dashed #2A3653;padding-top:14px}
+.result.show{display:block}
+.big{text-align:center;margin-bottom:12px}
+.big .n{font-size:2.1rem;font-weight:800;color:#34D399;line-height:1}
+.big .l{color:#9AA6BF;font-size:.82rem;margin-top:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:#0B1020;border:1px solid #232C44;border-radius:10px;padding:11px}
+.stat .v{font-size:1.05rem;font-weight:700}
+.stat .k{font-size:.7rem;color:#94A3B8;margin-top:2px;text-transform:uppercase;letter-spacing:.03em}
+.guide h2{font-size:1.08rem;color:#6D8BFF;margin:18px 0 6px}
+.guide p{color:#C7D0E4;font-size:.9rem;margin-bottom:8px}
+.guide table{width:100%;border-collapse:collapse;font-size:.82rem;margin:8px 0}
+.guide th,.guide td{border:1px solid #2A3653;padding:7px 9px;text-align:left}
+.guide th{background:#1A2338;color:#6D8BFF}
+.faq .q{font-weight:700;color:#E6EAF3;font-size:.92rem;margin-top:10px}
+.faq .a{color:#C7D0E4;font-size:.88rem}
+.email{background:#141B2E;border:1px solid #2A3653;border-radius:16px;padding:18px;text-align:center;margin:16px 0}
+.email h3{font-size:1.05rem;margin-bottom:6px}
+.email p{color:#9AA6BF;font-size:.86rem;margin-bottom:12px}
+.email form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.email input[type=email]{flex:1;min-width:190px;background:#0B1020;border:1px solid #2A3653;border-radius:10px;color:#F1F5F9;padding:12px;font-size:.95rem}
+.email button{background:#6D8BFF;color:#0B1020;font-weight:800;border:none;border-radius:10px;padding:12px 18px;cursor:pointer}
+.toolnav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0}
+.toolnav a{background:#141B2E;border:1px solid #232C44;border-radius:9px;padding:8px 12px;font-size:.8rem}
+.note{font-size:.75rem;color:#64748B;margin-top:10px}
+footer{text-align:center;color:#5B6480;font-size:.75rem;padding:22px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">Marketing Calculators</div></header>
+<h1>Google Local Services Ads (LSA) Cost Calculator</h1>
+<p class="lead">Estimate your LSA cost per lead, monthly spend, jobs booked, and ROI by trade.</p>
+
+<div class="card">
+  <h2>Estimate your LSA costs</h2>
+  <div class="sub">Local Services Ads are pay-per-lead with the Google Guaranteed badge.</div>
+  <div class="field"><label>Trade (sets typical cost per lead)</label><div class="inp"><select id="trade" onchange="setCpl()"></select></div><div class="hint" id="hint"></div></div>
+  <div class="field"><label>Cost per lead ($)</label><div class="inp"><span>$</span><input type="number" id="cpl" value="65"></div></div>
+  <div class="field"><label>Leads per month</label><div class="inp"><input type="number" id="leads" value="40"></div></div>
+  <div class="field"><label>Lead-to-job booking rate (%)</label><div class="inp"><input type="number" id="book" value="40"><span>%</span></div></div>
+  <div class="field"><label>Average job value ($)</label><div class="inp"><span>$</span><input type="number" id="job" value="450"></div></div>
+  <button class="btn" onclick="calc()">Calculate cost &amp; ROI</button>
+  <div class="result" id="res"></div>
+</div>
+
+<div class="card guide">
+  <h2>How much do Google Local Services Ads cost?</h2>
+  <p>LSAs are billed <strong>per lead</strong>, not per click. The national home-services average is about <strong>$53 per lead</strong>, but it varies widely by trade and market — competitive metros run $90+ while smaller markets can be $30 or less. Only charged for genuine leads (a call or message), and you can dispute invalid ones.</p>
+  <h2>LSA cost per lead by trade (2026)</h2>
+  <table>
+    <tr><th>Trade</th><th>Cost per lead</th></tr>
+    <tr><td>Electrician</td><td>$30–$75</td></tr>
+    <tr><td>Plumbing</td><td>$40–$90</td></tr>
+    <tr><td>HVAC</td><td>$60–$120</td></tr>
+    <tr><td>Roofing</td><td>$50–$130</td></tr>
+    <tr><td>Home services (avg)</td><td>~$53</td></tr>
+  </table>
+  <h2>Why LSAs beat regular Google Ads for the trades</h2>
+  <p>You pay only for leads (not clicks), you get the green Google Guaranteed badge that builds trust, and your listing sits at the very top of local results. After booking rate and closing, LSA cost per booked job is usually far lower than traditional PPC, which runs $80–$200 per lead.</p>
+  <h2>Frequently asked questions</h2>
+  <div class="faq">
+    <div class="q">How much does a Google LSA lead cost?</div>
+    <div class="a">Around $53 on average for home services in 2026; roughly $40–$90 for plumbing, $60–$120 for HVAC, $30–$75 for electrical.</div>
+    <div class="q">Can I dispute bad LSA leads?</div>
+    <div class="a">Yes. Google lets you dispute leads that are spam, wrong service, or out of area, and credits valid disputes so you're not charged.</div>
+    <div class="q">Are LSAs better than Google Ads?</div>
+    <div class="a">For local trades, usually yes — pay-per-lead pricing and the Google Guaranteed badge typically deliver a lower cost per booked job than click-based PPC.</div>
+  </div>
+  <p class="note">Estimates for planning only. LSA pricing set by Google and varies by market and demand.</p>
+</div>
+
+<div class="email">
+  <h3>Get more free marketing calculators</h3>
+  <p>New tools and benchmarks, straight to your inbox. No spam.</p>
+  <form action="https://bsymbolic.us16.list-manage.com/subscribe/post?u=878f465eb321da5bb4ba0d116&amp;id=7fc148b6b0" method="post" target="_blank" novalidate>
+    <input type="email" name="EMAIL" placeholder="you@email.com" required>
+    <div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_878f465eb321da5bb4ba0d116_7fc148b6b0" tabindex="-1" value=""></div>
+    <button type="submit">Get updates</button>
+  </form>
+</div>
+
+<div class="toolnav">
+  <a href="/marketing-calculators/">All calculators</a>
+  <a href="/marketing-calculators/cost-per-lead-calculator/">Cost per lead</a>
+  <a href="/marketing-calculators/ppc-budget-calculator/">PPC budget</a>
+</div>
+<footer>Marketing Calculators · free tools for planning campaigns</footer>
+</div>
+
+<script>
+var CPL={"Home services (average)":53,"Plumbing":65,"HVAC":90,"Electrician":50,"Roofing":90,"Garage / doors":55,"Landscaping / lawn":40,"Cleaning services":35};
+var money=function(n){return '$'+Math.round(n).toLocaleString();};
+var num=function(n){return Math.round(n).toLocaleString();};
+var V=function(id){return parseFloat(document.getElementById(id).value)||0;};
+var sel=document.getElementById('trade');for(var k in CPL){var o=document.createElement('option');o.value=k;o.textContent=k;sel.appendChild(o);}
+sel.value="Plumbing";
+function setCpl(){var v=CPL[document.getElementById('trade').value];document.getElementById('cpl').value=v;document.getElementById('hint').textContent='Typical: '+money(v)+' per lead';}
+setCpl();
+function calc(){
+  var cpl=V('cpl'),leads=V('leads');var cost=cpl*leads;var jobs=leads*V('book')/100;var rev=jobs*V('job');
+  var roi=cost>0?(rev-cost)/cost*100:0;var cpj=jobs>0?cost/jobs:0;
+  var html='<div class="big"><div class="n">'+money(cost)+'</div><div class="l">estimated monthly LSA spend ('+(roi>=0?'+':'')+Math.round(roi)+'% ROI)</div></div><div class="grid">'
+   +'<div class="stat"><div class="v">'+num(leads)+'</div><div class="k">Leads / mo</div></div>'
+   +'<div class="stat"><div class="v">'+num(jobs)+'</div><div class="k">Jobs booked</div></div>'
+   +'<div class="stat"><div class="v">'+money(cpj)+'</div><div class="k">Cost / booked job</div></div>'
+   +'<div class="stat"><div class="v">'+money(rev)+'</div><div class="k">Revenue / mo</div></div>'
+   +'<div class="stat"><div class="v">'+money(cpl)+'</div><div class="k">Cost / lead</div></div>'
+   +'<div class="stat"><div class="v">'+money(rev-cost)+'</div><div class="k">Net / mo</div></div></div>';
+  var el=document.getElementById('res');el.innerHTML=html;el.classList.add('show');
+}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Google Local Services Ads Cost Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://denrod25-del.github.io/marketing-calculators/local-service-ads-cost-calculator/","description":"Estimate LSA cost per lead, monthly budget, jobs and ROI by trade with 2026 benchmarks."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a Google LSA lead cost?","acceptedAnswer":{"@type":"Answer","text":"Around $53 on average for home services in 2026; roughly $40 to $90 for plumbing, $60 to $120 for HVAC, $30 to $75 for electrical."}},{"@type":"Question","name":"Can I dispute bad LSA leads?","acceptedAnswer":{"@type":"Answer","text":"Yes. Google lets you dispute leads that are spam, wrong service, or out of area, and credits valid disputes."}},{"@type":"Question","name":"Are LSAs better than Google Ads?","acceptedAnswer":{"@type":"Answer","text":"For local trades, usually yes. Pay-per-lead pricing and the Google Guaranteed badge typically deliver a lower cost per booked job than click-based PPC."}}]}</script>
+</body>
+</html>

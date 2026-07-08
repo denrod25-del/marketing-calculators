@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0B1020">
+<title>Facebook / Meta Ads Cost Calculator (2026) — Reach, Clicks, Leads and ROI</title>
+<meta name="description" content="Free Facebook and Meta Ads cost calculator. Enter your budget and CPM to estimate impressions, clicks, leads, cost per lead, customers and ROI, with 2026 Meta ad benchmarks.">
+<link rel="canonical" href="https://denrod25-del.github.io/marketing-calculators/facebook-ads-cost-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Facebook / Meta Ads Cost Calculator (2026)">
+<meta property="og:description" content="Estimate impressions, clicks, leads, cost per lead and ROI from your Facebook ad budget.">
+<meta property="og:url" content="https://denrod25-del.github.io/marketing-calculators/facebook-ads-cost-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0B1020;color:#E6EAF3;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;padding:16px}
+.wrap{max-width:640px;margin:0 auto}
+a{color:#8FA8FF;text-decoration:none}
+header.top{text-align:center;padding:12px 0 4px}
+header.top .brand{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#6D8BFF;font-weight:700}
+h1{font-size:1.42rem;font-weight:800;line-height:1.22;margin:10px 0 8px;text-align:center}
+.lead{color:#9AA6BF;font-size:.95rem;text-align:center}
+.card{background:#141B2E;border:1px solid #232C44;border-radius:16px;padding:18px;margin:14px 0}
+.card h2{font-size:1.1rem;color:#6D8BFF;margin-bottom:6px}
+.sub{color:#9AA6BF;font-size:.85rem;margin-bottom:12px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:.82rem;color:#C7D0E4;margin-bottom:5px;font-weight:600}
+.inp{display:flex;align-items:center;background:#0B1020;border:1px solid #2A3653;border-radius:10px;overflow:hidden}
+.inp span{padding:0 11px;color:#94A3B8;background:#1A2338;align-self:stretch;display:flex;align-items:center;font-size:.9rem}
+.inp input,.inp select{flex:1;background:transparent;border:none;color:#F1F5F9;padding:11px;font-size:.95rem;outline:none;width:100%}
+.inp select{cursor:pointer}
+.hint{font-size:.78rem;color:#34D399;margin-top:5px;font-weight:600}
+.btn{width:100%;padding:13px;background:#6D8BFF;color:#0B1020;font-weight:800;font-size:.98rem;border:none;border-radius:11px;cursor:pointer;margin-top:4px}
+.btn:hover{background:#87a0ff}
+.result{display:none;margin-top:14px;border-top:1px dashed #2A3653;padding-top:14px}
+.result.show{display:block}
+.big{text-align:center;margin-bottom:12px}
+.big .n{font-size:2.1rem;font-weight:800;color:#34D399;line-height:1}
+.big .l{color:#9AA6BF;font-size:.82rem;margin-top:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:#0B1020;border:1px solid #232C44;border-radius:10px;padding:11px}
+.stat .v{font-size:1.05rem;font-weight:700}
+.stat .k{font-size:.7rem;color:#94A3B8;margin-top:2px;text-transform:uppercase;letter-spacing:.03em}
+.guide h2{font-size:1.08rem;color:#6D8BFF;margin:18px 0 6px}
+.guide p{color:#C7D0E4;font-size:.9rem;margin-bottom:8px}
+.guide table{width:100%;border-collapse:collapse;font-size:.82rem;margin:8px 0}
+.guide th,.guide td{border:1px solid #2A3653;padding:7px 9px;text-align:left}
+.guide th{background:#1A2338;color:#6D8BFF}
+.faq .q{font-weight:700;color:#E6EAF3;font-size:.92rem;margin-top:10px}
+.faq .a{color:#C7D0E4;font-size:.88rem}
+.email{background:#141B2E;border:1px solid #2A3653;border-radius:16px;padding:18px;text-align:center;margin:16px 0}
+.email h3{font-size:1.05rem;margin-bottom:6px}
+.email p{color:#9AA6BF;font-size:.86rem;margin-bottom:12px}
+.email form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.email input[type=email]{flex:1;min-width:190px;background:#0B1020;border:1px solid #2A3653;border-radius:10px;color:#F1F5F9;padding:12px;font-size:.95rem}
+.email button{background:#6D8BFF;color:#0B1020;font-weight:800;border:none;border-radius:10px;padding:12px 18px;cursor:pointer}
+.toolnav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0}
+.toolnav a{background:#141B2E;border:1px solid #232C44;border-radius:9px;padding:8px 12px;font-size:.8rem}
+.note{font-size:.75rem;color:#64748B;margin-top:10px}
+footer{text-align:center;color:#5B6480;font-size:.75rem;padding:22px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">Marketing Calculators</div></header>
+<h1>Facebook / Meta Ads Cost Calculator</h1>
+<p class="lead">Turn your budget into impressions, clicks, leads and ROI — with 2026 Meta benchmarks.</p>
+
+<div class="card">
+  <h2>Estimate your Facebook ad results</h2>
+  <div class="sub">Works for Facebook and Instagram (Meta) ad campaigns.</div>
+  <div class="field"><label>Industry (sets typical CPM)</label><div class="inp"><select id="ind" onchange="setCpm()"></select></div><div class="hint" id="hint"></div></div>
+  <div class="field"><label>Monthly ad budget ($)</label><div class="inp"><span>$</span><input type="number" id="budget" value="1500"></div></div>
+  <div class="field"><label>CPM — cost per 1,000 impressions ($)</label><div class="inp"><span>$</span><input type="number" id="cpm" value="11.62" step="0.5"></div></div>
+  <div class="field"><label>Click-through rate (CTR) %</label><div class="inp"><input type="number" id="ctr" value="1.2" step="0.1"><span>%</span></div></div>
+  <div class="field"><label>Landing-page conversion (clicks → leads) %</label><div class="inp"><input type="number" id="lp" value="8"><span>%</span></div></div>
+  <div class="field"><label>Lead-to-customer close rate %</label><div class="inp"><input type="number" id="close" value="20"><span>%</span></div></div>
+  <div class="field"><label>Average sale value ($)</label><div class="inp"><span>$</span><input type="number" id="sale" value="500"></div></div>
+  <button class="btn" onclick="calc()">Calculate cost &amp; ROI</button>
+  <div class="result" id="res"></div>
+</div>
+
+<div class="card guide">
+  <h2>How much do Facebook ads cost in 2026?</h2>
+  <p>Facebook (Meta) ads are bought on <strong>CPM</strong> — cost per 1,000 impressions — which averages about <strong>$11.62</strong>, typically ranging <strong>$7–$14</strong> by industry. On a click basis the average CPC is roughly <strong>$0.60–$1.00</strong>, far below Google Search. Your real cost per lead depends on click-through and landing-page conversion.</p>
+  <h2>Meta ad benchmarks (2026)</h2>
+  <table>
+    <tr><th>Metric</th><th>Typical</th></tr>
+    <tr><td>CPM (per 1,000 impressions)</td><td>$7–$14 (avg $11.62)</td></tr>
+    <tr><td>Average CPC</td><td>$0.60–$1.00</td></tr>
+    <tr><td>Click-through rate</td><td>~1%–2%</td></tr>
+    <tr><td>Landing-page conversion</td><td>5%–12%</td></tr>
+  </table>
+  <h2>How to lower your Facebook cost per lead</h2>
+  <p>Strong creative is the biggest lever — video and native-looking images beat stock. Tighten targeting to your service area, use lead-form ads to cut friction, retarget site visitors (cheap and high-converting), and let the campaign exit the learning phase before judging results.</p>
+  <h2>Frequently asked questions</h2>
+  <div class="faq">
+    <div class="q">How much should I spend on Facebook ads?</div>
+    <div class="a">Enough to exit the learning phase — often $30–$50/day per ad set to start. Use the calculator to size budget against your lead goal and average sale.</div>
+    <div class="q">What is a good CPM on Facebook?</div>
+    <div class="a">$7–$14 is typical; tightly targeted or high-competition audiences run higher. Compare within your industry and objective.</div>
+    <div class="q">Are Facebook or Google ads cheaper?</div>
+    <div class="a">Facebook usually has a lower CPC and CPM, but Google Search captures higher-intent demand. Many local businesses run both.</div>
+  </div>
+  <p class="note">Estimates for planning only.</p>
+</div>
+
+<div class="email">
+  <h3>Get more free marketing calculators</h3>
+  <p>New tools and benchmarks, straight to your inbox. No spam.</p>
+  <form action="https://bsymbolic.us16.list-manage.com/subscribe/post?u=878f465eb321da5bb4ba0d116&amp;id=7fc148b6b0" method="post" target="_blank" novalidate>
+    <input type="email" name="EMAIL" placeholder="you@email.com" required>
+    <div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_878f465eb321da5bb4ba0d116_7fc148b6b0" tabindex="-1" value=""></div>
+    <button type="submit">Get updates</button>
+  </form>
+</div>
+
+<div class="toolnav">
+  <a href="/marketing-calculators/">All calculators</a>
+  <a href="/marketing-calculators/cpm-calculator/">CPM calculator</a>
+  <a href="/marketing-calculators/marketing-roi-calculator/">Marketing ROI</a>
+</div>
+<footer>Marketing Calculators · free tools for planning campaigns</footer>
+</div>
+
+<script>
+var SOC={"All-industry average":11.62,"Home &amp; services":9.50,"Beauty / health":12.46,"B2B / finance":13.00,"Retail / e-commerce":9.00,"Automotive":6.96};
+var money=function(n){return '$'+Math.round(n).toLocaleString();};
+var money2=function(n){return '$'+(n).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});};
+var num=function(n){return Math.round(n).toLocaleString();};
+var V=function(id){return parseFloat(document.getElementById(id).value)||0;};
+var sel=document.getElementById('ind');for(var k in SOC){var o=document.createElement('option');o.value=k;o.innerHTML=k;sel.appendChild(o);}
+sel.value="All-industry average";
+function setCpm(){var v=SOC[document.getElementById('ind').value];document.getElementById('cpm').value=v;document.getElementById('hint').textContent='Typical CPM: '+money2(v);}
+setCpm();
+function calc(){
+  var cost=V('budget');var imp=V('cpm')>0?cost/V('cpm')*1000:0;var clicks=imp*V('ctr')/100;var leads=clicks*V('lp')/100;var cust=leads*V('close')/100;var rev=cust*V('sale');
+  var roi=cost>0?(rev-cost)/cost*100:0;
+  var html='<div class="big"><div class="n">'+num(leads)+'</div><div class="l">estimated leads / month ('+(roi>=0?'+':'')+Math.round(roi)+'% ROI)</div></div><div class="grid">'
+   +'<div class="stat"><div class="v">'+num(imp)+'</div><div class="k">Impressions</div></div>'
+   +'<div class="stat"><div class="v">'+num(clicks)+'</div><div class="k">Clicks</div></div>'
+   +'<div class="stat"><div class="v">'+(leads>0?money(cost/leads):'—')+'</div><div class="k">Cost / lead</div></div>'
+   +'<div class="stat"><div class="v">'+num(cust)+'</div><div class="k">Customers</div></div>'
+   +'<div class="stat"><div class="v">'+money(rev)+'</div><div class="k">Revenue</div></div>'
+   +'<div class="stat"><div class="v">'+money(cost)+'</div><div class="k">Budget</div></div></div>';
+  var el=document.getElementById('res');el.innerHTML=html;el.classList.add('show');
+}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Facebook Meta Ads Cost Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://denrod25-del.github.io/marketing-calculators/facebook-ads-cost-calculator/","description":"Estimate impressions, clicks, leads, cost per lead and ROI from your Facebook ad budget."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much should I spend on Facebook ads?","acceptedAnswer":{"@type":"Answer","text":"Enough to exit the learning phase, often $30 to $50 per day per ad set to start. Size budget against your lead goal and average sale."}},{"@type":"Question","name":"What is a good CPM on Facebook?","acceptedAnswer":{"@type":"Answer","text":"$7 to $14 is typical; tightly targeted or high-competition audiences run higher."}},{"@type":"Question","name":"Are Facebook or Google ads cheaper?","acceptedAnswer":{"@type":"Answer","text":"Facebook usually has a lower CPC and CPM, but Google Search captures higher-intent demand. Many local businesses run both."}}]}</script>
+</body>
+</html>
