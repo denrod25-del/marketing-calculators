@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0B1020">
+<title>Affiliate Marketing ROI Calculator — Commission, Revenue and Return</title>
+<meta name="description" content="Free affiliate marketing ROI calculator. Enter affiliate-driven sales, average order value and commission rate to get commissions paid, revenue, net profit, effective cost per sale and ROI.">
+<link rel="canonical" href="https://denrod25-del.github.io/marketing-calculators/affiliate-marketing-roi-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Affiliate Marketing ROI Calculator — Commission, Revenue and Return">
+<meta property="og:description" content="Free affiliate marketing ROI calculator. Enter affiliate-driven sales, average order value and commission rate to get commissions paid, revenue, net profit, effective cost per sale and ROI.">
+<meta property="og:url" content="https://denrod25-del.github.io/marketing-calculators/affiliate-marketing-roi-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0B1020;color:#E6EAF3;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;padding:16px}
+.wrap{max-width:640px;margin:0 auto}
+a{color:#8FA8FF;text-decoration:none}
+header.top{text-align:center;padding:12px 0 4px}
+header.top .brand{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#6D8BFF;font-weight:700}
+h1{font-size:1.42rem;font-weight:800;line-height:1.22;margin:10px 0 8px;text-align:center}
+.lead{color:#9AA6BF;font-size:.95rem;text-align:center}
+.card{background:#141B2E;border:1px solid #232C44;border-radius:16px;padding:18px;margin:14px 0}
+.card h2{font-size:1.1rem;color:#6D8BFF;margin-bottom:6px}
+.sub{color:#9AA6BF;font-size:.85rem;margin-bottom:12px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:.82rem;color:#C7D0E4;margin-bottom:5px;font-weight:600}
+.inp{display:flex;align-items:center;background:#0B1020;border:1px solid #2A3653;border-radius:10px;overflow:hidden}
+.inp span{padding:0 11px;color:#94A3B8;background:#1A2338;align-self:stretch;display:flex;align-items:center;font-size:.9rem}
+.inp input,.inp select{flex:1;background:transparent;border:none;color:#F1F5F9;padding:11px;font-size:.95rem;outline:none;width:100%}
+.inp select{cursor:pointer}
+.hint{font-size:.78rem;color:#34D399;margin-top:5px;font-weight:600}
+.opt{font-size:.78rem;color:#64748B;margin:14px 0 8px;text-transform:uppercase;letter-spacing:.05em}
+.btn{width:100%;padding:13px;background:#6D8BFF;color:#0B1020;font-weight:800;font-size:.98rem;border:none;border-radius:11px;cursor:pointer;margin-top:4px}
+.btn:hover{background:#87a0ff}
+.result{display:none;margin-top:14px;border-top:1px dashed #2A3653;padding-top:14px}
+.result.show{display:block}
+.big{text-align:center;margin-bottom:12px}
+.big .n{font-size:2.1rem;font-weight:800;color:#34D399;line-height:1}
+.big .n.bad{color:#F87171}.big .n.mid{color:#F4B942}
+.big .l{color:#9AA6BF;font-size:.82rem;margin-top:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:#0B1020;border:1px solid #232C44;border-radius:10px;padding:11px}
+.stat .v{font-size:1.05rem;font-weight:700}
+.stat .k{font-size:.7rem;color:#94A3B8;margin-top:2px;text-transform:uppercase;letter-spacing:.03em}
+.guide h2{font-size:1.08rem;color:#6D8BFF;margin:18px 0 6px}
+.guide p{color:#C7D0E4;font-size:.9rem;margin-bottom:8px}
+.guide table{width:100%;border-collapse:collapse;font-size:.82rem;margin:8px 0}
+.guide th,.guide td{border:1px solid #2A3653;padding:7px 9px;text-align:left}
+.guide th{background:#1A2338;color:#6D8BFF}
+.faq .q{font-weight:700;color:#E6EAF3;font-size:.92rem;margin-top:10px}
+.faq .a{color:#C7D0E4;font-size:.88rem}
+.email{background:#141B2E;border:1px solid #2A3653;border-radius:16px;padding:18px;text-align:center;margin:16px 0}
+.email h3{font-size:1.05rem;margin-bottom:6px}
+.email p{color:#9AA6BF;font-size:.86rem;margin-bottom:12px}
+.email form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.email input[type=email]{flex:1;min-width:190px;background:#0B1020;border:1px solid #2A3653;border-radius:10px;color:#F1F5F9;padding:12px;font-size:.95rem}
+.email button{background:#6D8BFF;color:#0B1020;font-weight:800;border:none;border-radius:10px;padding:12px 18px;cursor:pointer}
+.toolnav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0}
+.toolnav a{background:#141B2E;border:1px solid #232C44;border-radius:9px;padding:8px 12px;font-size:.8rem}
+.note{font-size:.75rem;color:#64748B;margin-top:10px}
+footer{text-align:center;color:#5B6480;font-size:.75rem;padding:22px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">Marketing Calculators</div></header>
+<h1>Affiliate Marketing ROI Calculator</h1>
+<p class="lead">Commission-based marketing: revenue, payouts, effective cost per sale and ROI.</p>
+<div class="card">
+  <h2>Estimate your affiliate program</h2>
+  <div class="sub">You pay commission only on sales an affiliate drives — low-risk by design.</div>
+  <div class="field"><label>Sales driven by affiliates (per month)</label><div class="inp"><input type="number" id="sales" value="80"></div></div>
+  <div class="field"><label>Average order value ($)</label><div class="inp"><span>$</span><input type="number" id="aov" value="120"></div></div>
+  <div class="field"><label>Commission rate (%)</label><div class="inp"><input type="number" id="rate" value="15"><span>%</span></div></div>
+  <div class="opt">Optional</div>
+  <div class="field"><label>Platform / network fee per month ($)</label><div class="inp"><span>$</span><input type="number" id="fee" value="100"></div></div>
+  <div class="field"><label>Gross margin before commission (%)</label><div class="inp"><input type="number" id="margin" value="60"><span>%</span></div></div>
+  <button class="btn" onclick="calc()">Calculate ROI</button>
+  <div class="result" id="res"></div>
+</div>
+<div class="card guide">
+  <h2>Why affiliate marketing is low-risk</h2><p>With affiliate marketing you pay a commission only when a partner actually drives a sale, so your cost scales with revenue — there's no upfront ad spend to lose. Effective cost per sale is essentially your commission rate plus any platform fee, which makes the ROI easy to control.</p>
+  <h2>Setting the commission rate</h2><p>Commissions typically run <strong>5%–30%</strong> of order value depending on margin and industry. Set it high enough to motivate partners but below your gross margin so each sale still profits. Services and digital goods (high margin) can afford richer commissions than thin-margin physical products.</p>
+  <h2>Making it work</h2><p>Recruit partners whose audience matches your customer, give them tracking links and creative, pay reliably, and watch for low-quality or fraudulent sales. Referral and affiliate programs share the same strength: you only pay for results.</p>
+  <h2>Frequently asked questions</h2>
+  <div class="faq">
+    <div class="q">How do I calculate affiliate marketing ROI?</div>
+    <div class="a">Revenue is affiliate sales times average order value. Subtract commissions and fees from gross profit to get net, then divide net by total program cost.</div>
+    <div class="q">What is a typical affiliate commission?</div>
+    <div class="a">Usually 5%–30% of order value, set below your gross margin so each sale remains profitable.</div>
+    <div class="q">Is affiliate marketing worth it?</div>
+    <div class="a">It's low-risk because you pay only on sales. It works best with partners whose audience matches your customer and clean sale tracking.</div>
+  </div>
+  <p class="note">Estimates for planning only.</p>
+</div>
+<div class="email"><h3>Get more free marketing calculators</h3><p>New tools and benchmarks, straight to your inbox. No spam.</p><form action="https://bsymbolic.us16.list-manage.com/subscribe/post?u=878f465eb321da5bb4ba0d116&amp;id=7fc148b6b0" method="post" target="_blank" novalidate><input type="email" name="EMAIL" placeholder="you@email.com" required><div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_878f465eb321da5bb4ba0d116_7fc148b6b0" tabindex="-1" value=""></div><button type="submit">Get updates</button></form></div>
+<div class="toolnav">
+  <a href="/marketing-calculators/">All calculators</a>
+  <a href="/marketing-calculators/referral-program-roi-calculator/">Referral ROI</a>
+  <a href="/marketing-calculators/customer-acquisition-cost-calculator/">CAC calculator</a>
+</div>
+<footer>Marketing Calculators &middot; free tools for planning campaigns</footer>
+</div>
+<script>var money=function(n){return '$'+Math.round(n).toLocaleString();};var money2=function(n){return '$'+(n).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});};var num=function(n){return Math.round(n).toLocaleString();};var V=function(id){return parseFloat(document.getElementById(id).value)||0;};
+function calc(){var sales=V('sales'),aov=V('aov'),rate=V('rate'),fee=V('fee'),margin=V('margin');
+var rev=sales*aov;var comm=rev*rate/100;var cost=comm+fee;
+var grossProfit=rev*margin/100;var netProfit=grossProfit-cost;var roi=cost>0?(netProfit)/cost*100:0;
+var cps=sales>0?cost/sales:0;
+var html='<div class="big"><div class="n">'+money(rev)+'</div><div class="l">affiliate revenue / month ('+(roi>=0?'+':'')+Math.round(roi)+'% ROI)</div></div><div class="grid">'
++'<div class="stat"><div class="v">'+money(comm)+'</div><div class="k">Commissions paid</div></div>'
++'<div class="stat"><div class="v">'+money(cost)+'</div><div class="k">Total program cost</div></div>'
++'<div class="stat"><div class="v">'+money(cps)+'</div><div class="k">Effective cost / sale</div></div>'
++'<div class="stat"><div class="v">'+num(sales)+'</div><div class="k">Sales / mo</div></div>'
++'<div class="stat"><div class="v">'+money(netProfit)+'</div><div class="k">Net profit</div></div>'
++'<div class="stat"><div class="v">'+rate+'%</div><div class="k">Commission rate</div></div></div>';
+document.getElementById('res').innerHTML=html;document.getElementById('res').classList.add('show');}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Affiliate Marketing ROI Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://denrod25-del.github.io/marketing-calculators/affiliate-marketing-roi-calculator/","description":"Free affiliate marketing ROI calculator. Enter affiliate-driven sales, average order value and commission rate to get commissions paid, revenue, net profit, effective cost per sale and ROI."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate affiliate marketing ROI?","acceptedAnswer":{"@type":"Answer","text":"Revenue is affiliate sales times average order value. Subtract commissions and fees from gross profit to get net, then divide net by total program cost."}},{"@type":"Question","name":"What is a typical affiliate commission?","acceptedAnswer":{"@type":"Answer","text":"Usually 5%–30% of order value, set below your gross margin so each sale remains profitable."}},{"@type":"Question","name":"Is affiliate marketing worth it?","acceptedAnswer":{"@type":"Answer","text":"It's low-risk because you pay only on sales. It works best with partners whose audience matches your customer and clean sale tracking."}}]}</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0B1020">
+<title>Print Advertising Cost Calculator (2026) — Newspaper &amp; Magazine Ad Cost</title>
+<meta name="description" content="Free print advertising cost calculator. Estimate cost, CPM, leads and ROI for newspaper and magazine ads by publication type, with 2026 rate benchmarks.">
+<link rel="canonical" href="https://denrod25-del.github.io/marketing-calculators/print-advertising-cost-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Print Advertising Cost Calculator (2026) — Newspaper &amp; Magazine Ad Cost">
+<meta property="og:description" content="Free print advertising cost calculator. Estimate cost, CPM, leads and ROI for newspaper and magazine ads by publication type, with 2026 rate benchmarks.">
+<meta property="og:url" content="https://denrod25-del.github.io/marketing-calculators/print-advertising-cost-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0B1020;color:#E6EAF3;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;padding:16px}
+.wrap{max-width:640px;margin:0 auto}
+a{color:#8FA8FF;text-decoration:none}
+header.top{text-align:center;padding:12px 0 4px}
+header.top .brand{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#6D8BFF;font-weight:700}
+h1{font-size:1.42rem;font-weight:800;line-height:1.22;margin:10px 0 8px;text-align:center}
+.lead{color:#9AA6BF;font-size:.95rem;text-align:center}
+.card{background:#141B2E;border:1px solid #232C44;border-radius:16px;padding:18px;margin:14px 0}
+.card h2{font-size:1.1rem;color:#6D8BFF;margin-bottom:6px}
+.sub{color:#9AA6BF;font-size:.85rem;margin-bottom:12px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:.82rem;color:#C7D0E4;margin-bottom:5px;font-weight:600}
+.inp{display:flex;align-items:center;background:#0B1020;border:1px solid #2A3653;border-radius:10px;overflow:hidden}
+.inp span{padding:0 11px;color:#94A3B8;background:#1A2338;align-self:stretch;display:flex;align-items:center;font-size:.9rem}
+.inp input,.inp select{flex:1;background:transparent;border:none;color:#F1F5F9;padding:11px;font-size:.95rem;outline:none;width:100%}
+.inp select{cursor:pointer}
+.hint{font-size:.78rem;color:#34D399;margin-top:5px;font-weight:600}
+.opt{font-size:.78rem;color:#64748B;margin:14px 0 8px;text-transform:uppercase;letter-spacing:.05em}
+.btn{width:100%;padding:13px;background:#6D8BFF;color:#0B1020;font-weight:800;font-size:.98rem;border:none;border-radius:11px;cursor:pointer;margin-top:4px}
+.btn:hover{background:#87a0ff}
+.result{display:none;margin-top:14px;border-top:1px dashed #2A3653;padding-top:14px}
+.result.show{display:block}
+.big{text-align:center;margin-bottom:12px}
+.big .n{font-size:2.1rem;font-weight:800;color:#34D399;line-height:1}
+.big .n.bad{color:#F87171}.big .n.mid{color:#F4B942}
+.big .l{color:#9AA6BF;font-size:.82rem;margin-top:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:#0B1020;border:1px solid #232C44;border-radius:10px;padding:11px}
+.stat .v{font-size:1.05rem;font-weight:700}
+.stat .k{font-size:.7rem;color:#94A3B8;margin-top:2px;text-transform:uppercase;letter-spacing:.03em}
+.guide h2{font-size:1.08rem;color:#6D8BFF;margin:18px 0 6px}
+.guide p{color:#C7D0E4;font-size:.9rem;margin-bottom:8px}
+.guide table{width:100%;border-collapse:collapse;font-size:.82rem;margin:8px 0}
+.guide th,.guide td{border:1px solid #2A3653;padding:7px 9px;text-align:left}
+.guide th{background:#1A2338;color:#6D8BFF}
+.faq .q{font-weight:700;color:#E6EAF3;font-size:.92rem;margin-top:10px}
+.faq .a{color:#C7D0E4;font-size:.88rem}
+.email{background:#141B2E;border:1px solid #2A3653;border-radius:16px;padding:18px;text-align:center;margin:16px 0}
+.email h3{font-size:1.05rem;margin-bottom:6px}
+.email p{color:#9AA6BF;font-size:.86rem;margin-bottom:12px}
+.email form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.email input[type=email]{flex:1;min-width:190px;background:#0B1020;border:1px solid #2A3653;border-radius:10px;color:#F1F5F9;padding:12px;font-size:.95rem}
+.email button{background:#6D8BFF;color:#0B1020;font-weight:800;border:none;border-radius:10px;padding:12px 18px;cursor:pointer}
+.toolnav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0}
+.toolnav a{background:#141B2E;border:1px solid #232C44;border-radius:9px;padding:8px 12px;font-size:.8rem}
+.note{font-size:.75rem;color:#64748B;margin-top:10px}
+footer{text-align:center;color:#5B6480;font-size:.75rem;padding:22px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">Marketing Calculators</div></header>
+<h1>Print Advertising Cost Calculator</h1>
+<p class="lead">Newspaper and magazine ad cost, CPM, leads and ROI by publication type.</p>
+<div class="card">
+  <h2>Estimate your print ad</h2>
+  <div class="sub">Pick a publication type for a typical rate and circulation, then adjust.</div>
+  <div class="field"><label>Publication &amp; size (sets cost &amp; circulation)</label><div class="inp"><select id="pub" onchange="setPub()"></select></div><div class="hint" id="hint"></div></div>
+  <div class="field"><label>Ad cost per insertion ($)</label><div class="inp"><span>$</span><input type="number" id="cost" value="350"></div></div>
+  <div class="field"><label>Insertions (times it runs)</label><div class="inp"><input type="number" id="runs" value="3"></div></div>
+  <div class="field"><label>Circulation / readership</label><div class="inp"><input type="number" id="circ" value="40000"></div></div>
+  <div class="field"><label>Response rate (% of readers)</label><div class="inp"><input type="number" id="resp" value="0.05" step="0.05"><span>%</span></div></div>
+  <div class="field"><label>Lead-to-customer close rate (%)</label><div class="inp"><input type="number" id="close" value="25"><span>%</span></div></div>
+  <div class="field"><label>Average sale value ($)</label><div class="inp"><span>$</span><input type="number" id="sale" value="600"></div></div>
+  <button class="btn" onclick="calc()">Calculate cost &amp; ROI</button>
+  <div class="result" id="res"></div>
+</div>
+<div class="card guide">
+  <h2>How much does print advertising cost?</h2><p>Print rates span a huge range. A <strong>quarter-page in a local newspaper runs about $200–$500</strong> and a full page around $2,000; regional dailies charge $5,000–$20,000 for a full page. Local magazines run about $1,100–$2,000 a full page, while <strong>national magazines reach $250,000–$700,000</strong>. Rates depend on circulation, size, color and frequency.</p>
+  <h2>Print cost by publication (2026)</h2><table><tr><th>Publication</th><th>Typical cost</th></tr><tr><td>Local paper 1/4 page</td><td>$200–$500</td></tr><tr><td>Local paper full page</td><td>~$2,000</td></tr><tr><td>Regional daily full page</td><td>$5,000–$20,000</td></tr><tr><td>Local magazine full page</td><td>$1,100–$2,000</td></tr><tr><td>National magazine full page</td><td>$250k–$700k</td></tr></table>
+  <h2>Making print pay off</h2><p>Print works locally when the publication reaches your customers and you commit to frequency — one ad rarely lands, but repeated placement builds recognition. Include a clear offer and a trackable code or number, and negotiate: printed rate cards are usually a starting point, not the final price.</p>
+  <h2>Frequently asked questions</h2>
+  <div class="faq">
+    <div class="q">How much does a newspaper ad cost?</div>
+    <div class="a">About $200–$500 for a quarter page in a local paper and ~$2,000 for a full page; regional dailies and nationals cost far more.</div>
+    <div class="q">How much does a magazine ad cost?</div>
+    <div class="a">Local magazines run ~$1,100–$2,000 a full page; national magazines can reach $250,000–$700,000 per insertion.</div>
+    <div class="q">Is print advertising still effective?</div>
+    <div class="a">It can be for local, targeted publications with frequency and a trackable offer. Negotiate rates and measure with a dedicated code or number.</div>
+  </div>
+  <p class="note">Estimates for planning only.</p>
+</div>
+<div class="email"><h3>Get more free marketing calculators</h3><p>New tools and benchmarks, straight to your inbox. No spam.</p><form action="https://bsymbolic.us16.list-manage.com/subscribe/post?u=878f465eb321da5bb4ba0d116&amp;id=7fc148b6b0" method="post" target="_blank" novalidate><input type="email" name="EMAIL" placeholder="you@email.com" required><div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_878f465eb321da5bb4ba0d116_7fc148b6b0" tabindex="-1" value=""></div><button type="submit">Get updates</button></form></div>
+<div class="toolnav">
+  <a href="/marketing-calculators/">All calculators</a>
+  <a href="/marketing-calculators/direct-mail-cost-calculator/">Direct mail cost</a>
+  <a href="/marketing-calculators/cpm-calculator/">CPM calculator</a>
+</div>
+<footer>Marketing Calculators &middot; free tools for planning campaigns</footer>
+</div>
+<script>var money=function(n){return '$'+Math.round(n).toLocaleString();};var money2=function(n){return '$'+(n).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});};var num=function(n){return Math.round(n).toLocaleString();};var V=function(id){return parseFloat(document.getElementById(id).value)||0;};
+var PUB={"Local newspaper — 1/4 page":[350,40000],"Local newspaper — full page":[2000,40000],"Regional daily — full page":[10000,250000],"Local magazine — full page":[1500,30000],"National magazine — full page":[400000,2000000]};
+var sel=document.getElementById('pub');for(var k in PUB){var o=document.createElement('option');o.value=k;o.textContent=k;sel.appendChild(o);}sel.value="Local newspaper — 1/4 page";
+function setPub(){var r=PUB[document.getElementById('pub').value];document.getElementById('cost').value=r[0];document.getElementById('circ').value=r[1];document.getElementById('hint').textContent='Typical: '+money(r[0])+'/insertion · ~'+num(r[1])+' circulation';}setPub();
+function calc(){var cost=V('cost')*V('runs');var imp=V('circ')*V('runs');var leads=imp*V('resp')/100;var cust=leads*V('close')/100;var rev=cust*V('sale');var cpm=imp>0?cost/(imp/1000):0;var roi=cost>0?(rev-cost)/cost*100:0;
+var html='<div class="big"><div class="n">'+money(cost)+'</div><div class="l">total print cost ('+(roi>=0?'+':'')+Math.round(roi)+'% ROI)</div></div><div class="grid">'
++'<div class="stat"><div class="v">'+num(imp)+'</div><div class="k">Total impressions</div></div>'
++'<div class="stat"><div class="v">'+money2(cpm)+'</div><div class="k">CPM</div></div>'
++'<div class="stat"><div class="v">'+num(leads)+'</div><div class="k">Leads</div></div>'
++'<div class="stat"><div class="v">'+num(cust)+'</div><div class="k">Customers</div></div>'
++'<div class="stat"><div class="v">'+money(rev)+'</div><div class="k">Revenue</div></div>'
++'<div class="stat"><div class="v">'+(leads>0?money(cost/leads):'—')+'</div><div class="k">Cost / lead</div></div></div>';
+document.getElementById('res').innerHTML=html;document.getElementById('res').classList.add('show');}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Print Advertising Cost Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://denrod25-del.github.io/marketing-calculators/print-advertising-cost-calculator/","description":"Free print advertising cost calculator. Estimate cost, CPM, leads and ROI for newspaper and magazine ads by publication type, with 2026 rate benchmarks."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a newspaper ad cost?","acceptedAnswer":{"@type":"Answer","text":"About $200–$500 for a quarter page in a local paper and ~$2,000 for a full page; regional dailies and nationals cost far more."}},{"@type":"Question","name":"How much does a magazine ad cost?","acceptedAnswer":{"@type":"Answer","text":"Local magazines run ~$1,100–$2,000 a full page; national magazines can reach $250,000–$700,000 per insertion."}},{"@type":"Question","name":"Is print advertising still effective?","acceptedAnswer":{"@type":"Answer","text":"It can be for local, targeted publications with frequency and a trackable offer. Negotiate rates and measure with a dedicated code or number."}}]}</script>
+</body>
+</html>
