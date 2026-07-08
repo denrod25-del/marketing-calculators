@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0B1020">
+<title>SMS Marketing ROI Calculator — Cost, Revenue and Return on Text Campaigns</title>
+<meta name="description" content="Free SMS marketing ROI calculator. Enter list size, sends, cost per message, click and conversion rates to estimate campaign cost, revenue, ROI and revenue per text. 2026 benchmarks.">
+<link rel="canonical" href="https://denrod25-del.github.io/marketing-calculators/sms-marketing-roi-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SMS Marketing ROI Calculator">
+<meta property="og:description" content="Estimate SMS campaign cost, revenue, ROI and revenue per text.">
+<meta property="og:url" content="https://denrod25-del.github.io/marketing-calculators/sms-marketing-roi-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0B1020;color:#E6EAF3;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;padding:16px}
+.wrap{max-width:640px;margin:0 auto}
+a{color:#8FA8FF;text-decoration:none}
+header.top{text-align:center;padding:12px 0 4px}
+header.top .brand{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#6D8BFF;font-weight:700}
+h1{font-size:1.42rem;font-weight:800;line-height:1.22;margin:10px 0 8px;text-align:center}
+.lead{color:#9AA6BF;font-size:.95rem;text-align:center}
+.card{background:#141B2E;border:1px solid #232C44;border-radius:16px;padding:18px;margin:14px 0}
+.card h2{font-size:1.1rem;color:#6D8BFF;margin-bottom:6px}
+.sub{color:#9AA6BF;font-size:.85rem;margin-bottom:12px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:.82rem;color:#C7D0E4;margin-bottom:5px;font-weight:600}
+.inp{display:flex;align-items:center;background:#0B1020;border:1px solid #2A3653;border-radius:10px;overflow:hidden}
+.inp span{padding:0 11px;color:#94A3B8;background:#1A2338;align-self:stretch;display:flex;align-items:center;font-size:.9rem}
+.inp input{flex:1;background:transparent;border:none;color:#F1F5F9;padding:11px;font-size:.95rem;outline:none;width:100%}
+.btn{width:100%;padding:13px;background:#6D8BFF;color:#0B1020;font-weight:800;font-size:.98rem;border:none;border-radius:11px;cursor:pointer;margin-top:4px}
+.btn:hover{background:#87a0ff}
+.result{display:none;margin-top:14px;border-top:1px dashed #2A3653;padding-top:14px}
+.result.show{display:block}
+.big{text-align:center;margin-bottom:12px}
+.big .n{font-size:2.1rem;font-weight:800;color:#34D399;line-height:1}
+.big .l{color:#9AA6BF;font-size:.82rem;margin-top:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:#0B1020;border:1px solid #232C44;border-radius:10px;padding:11px}
+.stat .v{font-size:1.05rem;font-weight:700}
+.stat .k{font-size:.7rem;color:#94A3B8;margin-top:2px;text-transform:uppercase;letter-spacing:.03em}
+.guide h2{font-size:1.08rem;color:#6D8BFF;margin:18px 0 6px}
+.guide p{color:#C7D0E4;font-size:.9rem;margin-bottom:8px}
+.guide table{width:100%;border-collapse:collapse;font-size:.82rem;margin:8px 0}
+.guide th,.guide td{border:1px solid #2A3653;padding:7px 9px;text-align:left}
+.guide th{background:#1A2338;color:#6D8BFF}
+.faq .q{font-weight:700;color:#E6EAF3;font-size:.92rem;margin-top:10px}
+.faq .a{color:#C7D0E4;font-size:.88rem}
+.email{background:#141B2E;border:1px solid #2A3653;border-radius:16px;padding:18px;text-align:center;margin:16px 0}
+.email h3{font-size:1.05rem;margin-bottom:6px}
+.email p{color:#9AA6BF;font-size:.86rem;margin-bottom:12px}
+.email form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.email input[type=email]{flex:1;min-width:190px;background:#0B1020;border:1px solid #2A3653;border-radius:10px;color:#F1F5F9;padding:12px;font-size:.95rem}
+.email button{background:#6D8BFF;color:#0B1020;font-weight:800;border:none;border-radius:10px;padding:12px 18px;cursor:pointer}
+.toolnav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0}
+.toolnav a{background:#141B2E;border:1px solid #232C44;border-radius:9px;padding:8px 12px;font-size:.8rem}
+.note{font-size:.75rem;color:#64748B;margin-top:10px}
+footer{text-align:center;color:#5B6480;font-size:.75rem;padding:22px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">Marketing Calculators</div></header>
+<h1>SMS Marketing ROI Calculator</h1>
+<p class="lead">Text-message campaign cost, revenue, ROI, and revenue per message.</p>
+
+<div class="card">
+  <h2>Estimate your SMS ROI</h2>
+  <div class="sub">Per month, based on your list and sending cadence.</div>
+  <div class="field"><label>Subscribers</label><div class="inp"><input type="number" id="list" value="3000"></div></div>
+  <div class="field"><label>Campaigns per month</label><div class="inp"><input type="number" id="freq" value="4"></div></div>
+  <div class="field"><label>Cost per message ($)</label><div class="inp"><span>$</span><input type="number" id="cpm" value="0.03" step="0.005"></div></div>
+  <div class="field"><label>Click-through rate (%)</label><div class="inp"><input type="number" id="ctr" value="15"><span>%</span></div></div>
+  <div class="field"><label>Click-to-sale conversion (%)</label><div class="inp"><input type="number" id="conv" value="6"><span>%</span></div></div>
+  <div class="field"><label>Average sale value ($)</label><div class="inp"><span>$</span><input type="number" id="sale" value="200"></div></div>
+  <button class="btn" onclick="calc()">Calculate SMS ROI</button>
+  <div class="result" id="res"></div>
+</div>
+
+<div class="card guide">
+  <h2>How much does SMS marketing cost?</h2>
+  <p>Text messages cost about <strong>$0.01–$0.05 each</strong> in the U.S. (MMS with images a bit more), plus a platform fee. Because sends are cheap and texts get read almost immediately, SMS posts some of the highest returns in marketing — industry benchmarks put ROI anywhere from <strong>$16 to $70+ per dollar spent</strong>, with click-through rates far above email.</p>
+  <h2>SMS benchmarks (2026)</h2>
+  <table>
+    <tr><th>Metric</th><th>Typical</th></tr>
+    <tr><td>Cost per message</td><td>$0.01–$0.05 (SMS)</td></tr>
+    <tr><td>Open rate</td><td>~98% (usually read in minutes)</td></tr>
+    <tr><td>Click-through rate</td><td>~10%–30%</td></tr>
+    <tr><td>ROI</td><td>~$16–$70 per $1</td></tr>
+  </table>
+  <h2>Keep SMS compliant and effective</h2>
+  <p>Get explicit opt-in (TCPA), include an easy opt-out, and don't over-send — SMS is a permission channel and overuse burns the list fast. Use it for time-sensitive value: appointment reminders, review requests, limited offers, and reactivation. Personalize and keep it short.</p>
+  <h2>Frequently asked questions</h2>
+  <div class="faq">
+    <div class="q">How much does it cost to send a text campaign?</div>
+    <div class="a">Roughly $0.01–$0.05 per message plus a platform fee. A 3,000-subscriber send at $0.03 is about $90.</div>
+    <div class="q">What is a good SMS ROI?</div>
+    <div class="a">SMS commonly returns $16–$70 per dollar spent thanks to near-100% open rates and high click-through.</div>
+    <div class="q">Is SMS marketing legal?</div>
+    <div class="a">Yes, with proper opt-in consent and an easy opt-out per TCPA rules. Never text purchased lists.</div>
+  </div>
+  <p class="note">Estimates for planning only. Follow TCPA and carrier rules.</p>
+</div>
+
+<div class="email">
+  <h3>Get more free marketing calculators</h3>
+  <p>New tools and benchmarks, straight to your inbox. No spam.</p>
+  <form action="https://bsymbolic.us16.list-manage.com/subscribe/post?u=878f465eb321da5bb4ba0d116&amp;id=7fc148b6b0" method="post" target="_blank" novalidate>
+    <input type="email" name="EMAIL" placeholder="you@email.com" required>
+    <div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_878f465eb321da5bb4ba0d116_7fc148b6b0" tabindex="-1" value=""></div>
+    <button type="submit">Get updates</button>
+  </form>
+</div>
+
+<div class="toolnav">
+  <a href="/marketing-calculators/">All calculators</a>
+  <a href="/marketing-calculators/email-marketing-roi-calculator/">Email ROI</a>
+  <a href="/marketing-calculators/marketing-roi-calculator/">Marketing ROI</a>
+</div>
+<footer>Marketing Calculators · free tools for planning campaigns</footer>
+</div>
+
+<script>
+var money=function(n){return '$'+Math.round(n).toLocaleString();};
+var money2=function(n){return '$'+(n).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});};
+var money3=function(n){return '$'+(n).toLocaleString(undefined,{minimumFractionDigits:3,maximumFractionDigits:3});};
+var num=function(n){return Math.round(n).toLocaleString();};
+var V=function(id){return parseFloat(document.getElementById(id).value)||0;};
+function calc(){
+  var sent=V('list')*V('freq');var cost=sent*V('cpm');var clicks=sent*V('ctr')/100;var sales=clicks*V('conv')/100;var rev=sales*V('sale');
+  var roi=cost>0?(rev-cost)/cost*100:0;var rpm=sent>0?rev/sent:0;
+  var html='<div class="big"><div class="n">'+money(rev)+'</div><div class="l">revenue / month ('+(roi>=0?'+':'')+Math.round(roi)+'% ROI)</div></div><div class="grid">'
+   +'<div class="stat"><div class="v">'+num(sent)+'</div><div class="k">Messages sent</div></div>'
+   +'<div class="stat"><div class="v">'+money(cost)+'</div><div class="k">Cost / mo</div></div>'
+   +'<div class="stat"><div class="v">'+num(clicks)+'</div><div class="k">Clicks</div></div>'
+   +'<div class="stat"><div class="v">'+num(sales)+'</div><div class="k">Sales</div></div>'
+   +'<div class="stat"><div class="v">'+money3(rpm)+'</div><div class="k">Revenue / text</div></div>'
+   +'<div class="stat"><div class="v">'+(cost>0?(rev/cost).toFixed(0)+':1':'—')+'</div><div class="k">Revenue : cost</div></div></div>';
+  var el=document.getElementById('res');el.innerHTML=html;el.classList.add('show');
+}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"SMS Marketing ROI Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://denrod25-del.github.io/marketing-calculators/sms-marketing-roi-calculator/","description":"Estimate SMS campaign cost, revenue, ROI and revenue per text."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does it cost to send a text campaign?","acceptedAnswer":{"@type":"Answer","text":"Roughly $0.01 to $0.05 per message plus a platform fee. A 3,000-subscriber send at $0.03 is about $90."}},{"@type":"Question","name":"What is a good SMS ROI?","acceptedAnswer":{"@type":"Answer","text":"SMS commonly returns $16 to $70 per dollar spent thanks to near-100% open rates and high click-through."}},{"@type":"Question","name":"Is SMS marketing legal?","acceptedAnswer":{"@type":"Answer","text":"Yes, with proper opt-in consent and an easy opt-out per TCPA rules. Never text purchased lists."}}]}</script>
+</body>
+</html>

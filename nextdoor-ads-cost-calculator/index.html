@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0B1020">
+<title>Nextdoor Ads Cost Calculator (2026) — Local Ad Spend, Leads and ROI</title>
+<meta name="description" content="Free Nextdoor Ads cost calculator. Estimate impressions, clicks, leads, cost per lead and ROI from your Nextdoor budget, with 2026 CPM and CPC benchmarks for local businesses.">
+<link rel="canonical" href="https://denrod25-del.github.io/marketing-calculators/nextdoor-ads-cost-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nextdoor Ads Cost Calculator (2026)">
+<meta property="og:description" content="Estimate Nextdoor ad impressions, clicks, leads, cost per lead and ROI.">
+<meta property="og:url" content="https://denrod25-del.github.io/marketing-calculators/nextdoor-ads-cost-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0B1020;color:#E6EAF3;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;padding:16px}
+.wrap{max-width:640px;margin:0 auto}
+a{color:#8FA8FF;text-decoration:none}
+header.top{text-align:center;padding:12px 0 4px}
+header.top .brand{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#6D8BFF;font-weight:700}
+h1{font-size:1.42rem;font-weight:800;line-height:1.22;margin:10px 0 8px;text-align:center}
+.lead{color:#9AA6BF;font-size:.95rem;text-align:center}
+.card{background:#141B2E;border:1px solid #232C44;border-radius:16px;padding:18px;margin:14px 0}
+.card h2{font-size:1.1rem;color:#6D8BFF;margin-bottom:6px}
+.sub{color:#9AA6BF;font-size:.85rem;margin-bottom:12px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:.82rem;color:#C7D0E4;margin-bottom:5px;font-weight:600}
+.inp{display:flex;align-items:center;background:#0B1020;border:1px solid #2A3653;border-radius:10px;overflow:hidden}
+.inp span{padding:0 11px;color:#94A3B8;background:#1A2338;align-self:stretch;display:flex;align-items:center;font-size:.9rem}
+.inp input{flex:1;background:transparent;border:none;color:#F1F5F9;padding:11px;font-size:.95rem;outline:none;width:100%}
+.btn{width:100%;padding:13px;background:#6D8BFF;color:#0B1020;font-weight:800;font-size:.98rem;border:none;border-radius:11px;cursor:pointer;margin-top:4px}
+.btn:hover{background:#87a0ff}
+.result{display:none;margin-top:14px;border-top:1px dashed #2A3653;padding-top:14px}
+.result.show{display:block}
+.big{text-align:center;margin-bottom:12px}
+.big .n{font-size:2.1rem;font-weight:800;color:#34D399;line-height:1}
+.big .l{color:#9AA6BF;font-size:.82rem;margin-top:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:#0B1020;border:1px solid #232C44;border-radius:10px;padding:11px}
+.stat .v{font-size:1.05rem;font-weight:700}
+.stat .k{font-size:.7rem;color:#94A3B8;margin-top:2px;text-transform:uppercase;letter-spacing:.03em}
+.guide h2{font-size:1.08rem;color:#6D8BFF;margin:18px 0 6px}
+.guide p{color:#C7D0E4;font-size:.9rem;margin-bottom:8px}
+.guide table{width:100%;border-collapse:collapse;font-size:.82rem;margin:8px 0}
+.guide th,.guide td{border:1px solid #2A3653;padding:7px 9px;text-align:left}
+.guide th{background:#1A2338;color:#6D8BFF}
+.faq .q{font-weight:700;color:#E6EAF3;font-size:.92rem;margin-top:10px}
+.faq .a{color:#C7D0E4;font-size:.88rem}
+.email{background:#141B2E;border:1px solid #2A3653;border-radius:16px;padding:18px;text-align:center;margin:16px 0}
+.email h3{font-size:1.05rem;margin-bottom:6px}
+.email p{color:#9AA6BF;font-size:.86rem;margin-bottom:12px}
+.email form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.email input[type=email]{flex:1;min-width:190px;background:#0B1020;border:1px solid #2A3653;border-radius:10px;color:#F1F5F9;padding:12px;font-size:.95rem}
+.email button{background:#6D8BFF;color:#0B1020;font-weight:800;border:none;border-radius:10px;padding:12px 18px;cursor:pointer}
+.toolnav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0}
+.toolnav a{background:#141B2E;border:1px solid #232C44;border-radius:9px;padding:8px 12px;font-size:.8rem}
+.note{font-size:.75rem;color:#64748B;margin-top:10px}
+footer{text-align:center;color:#5B6480;font-size:.75rem;padding:22px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">Marketing Calculators</div></header>
+<h1>Nextdoor Ads Cost Calculator</h1>
+<p class="lead">Local ad spend on Nextdoor — impressions, clicks, leads, cost per lead and ROI.</p>
+
+<div class="card">
+  <h2>Estimate your Nextdoor campaign</h2>
+  <div class="sub">Nextdoor runs a CPM/CPC auction; recommendations reach real local neighbors.</div>
+  <div class="field"><label>Monthly budget ($)</label><div class="inp"><span>$</span><input type="number" id="budget" value="800"></div></div>
+  <div class="field"><label>CPM — cost per 1,000 impressions ($)</label><div class="inp"><span>$</span><input type="number" id="cpm" value="15" step="1"></div></div>
+  <div class="field"><label>Click-through rate (%)</label><div class="inp"><input type="number" id="ctr" value="1" step="0.1"><span>%</span></div></div>
+  <div class="field"><label>Landing-page conversion (clicks → leads) %</label><div class="inp"><input type="number" id="lp" value="8"><span>%</span></div></div>
+  <div class="field"><label>Lead-to-customer close rate (%)</label><div class="inp"><input type="number" id="close" value="25"><span>%</span></div></div>
+  <div class="field"><label>Average job value ($)</label><div class="inp"><span>$</span><input type="number" id="sale" value="600"></div></div>
+  <button class="btn" onclick="calc()">Calculate cost &amp; ROI</button>
+  <div class="result" id="res"></div>
+</div>
+
+<div class="card guide">
+  <h2>How much do Nextdoor ads cost?</h2>
+  <p>Nextdoor's self-serve Ads Manager runs an auction. Recommended minimums are roughly <strong>$2 CPC</strong> and <strong>$10 CPM</strong>, with real-world local CPCs often landing around <strong>$2.50–$3.50</strong> and CPMs around <strong>$10–$20</strong>. Local Deals can start much smaller (a few dollars). Because Nextdoor is neighborhood-verified, recommendations there convert a lot like referrals.</p>
+  <h2>Nextdoor ad benchmarks (2026)</h2>
+  <table>
+    <tr><th>Metric</th><th>Typical</th></tr>
+    <tr><td>CPM</td><td>$10–$20</td></tr>
+    <tr><td>CPC</td><td>$2.50–$3.50</td></tr>
+    <tr><td>Best fit</td><td>Local home &amp; service businesses</td></tr>
+  </table>
+  <h2>Why Nextdoor works for local services</h2>
+  <p>Nextdoor users are verified neighbors actively asking "who's a good plumber/roofer/electrician?" — high-intent, hyper-local, and trust-driven. Ads plus an active free Business Page (responding to recommendations) compound: paid reach seeds the organic word-of-mouth the platform is built on.</p>
+  <h2>Frequently asked questions</h2>
+  <div class="faq">
+    <div class="q">How much does it cost to advertise on Nextdoor?</div>
+    <div class="a">Roughly $10–$20 CPM or $2.50–$3.50 per click via Ads Manager; Local Deals can start at just a few dollars.</div>
+    <div class="q">Are Nextdoor ads worth it?</div>
+    <div class="a">For local home and service businesses, often yes — the audience is verified neighbors with high local intent, so recommendations convert like referrals.</div>
+    <div class="q">Do I need a paid ad to use Nextdoor?</div>
+    <div class="a">No — a free Business Page and responding to neighbor recommendations drives organic leads; ads amplify that reach.</div>
+  </div>
+  <p class="note">Estimates for planning only.</p>
+</div>
+
+<div class="email">
+  <h3>Get more free marketing calculators</h3>
+  <p>New tools and benchmarks, straight to your inbox. No spam.</p>
+  <form action="https://bsymbolic.us16.list-manage.com/subscribe/post?u=878f465eb321da5bb4ba0d116&amp;id=7fc148b6b0" method="post" target="_blank" novalidate>
+    <input type="email" name="EMAIL" placeholder="you@email.com" required>
+    <div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_878f465eb321da5bb4ba0d116_7fc148b6b0" tabindex="-1" value=""></div>
+    <button type="submit">Get updates</button>
+  </form>
+</div>
+
+<div class="toolnav">
+  <a href="/marketing-calculators/">All calculators</a>
+  <a href="/marketing-calculators/facebook-ads-cost-calculator/">Facebook ads</a>
+  <a href="/marketing-calculators/cost-per-lead-calculator/">Cost per lead</a>
+</div>
+<footer>Marketing Calculators · free tools for planning campaigns</footer>
+</div>
+
+<script>
+var money=function(n){return '$'+Math.round(n).toLocaleString();};
+var num=function(n){return Math.round(n).toLocaleString();};
+var V=function(id){return parseFloat(document.getElementById(id).value)||0;};
+function calc(){
+  var cost=V('budget');var imp=V('cpm')>0?cost/V('cpm')*1000:0;var clicks=imp*V('ctr')/100;var leads=clicks*V('lp')/100;var cust=leads*V('close')/100;var rev=cust*V('sale');
+  var roi=cost>0?(rev-cost)/cost*100:0;
+  var html='<div class="big"><div class="n">'+num(leads)+'</div><div class="l">estimated leads / month ('+(roi>=0?'+':'')+Math.round(roi)+'% ROI)</div></div><div class="grid">'
+   +'<div class="stat"><div class="v">'+num(imp)+'</div><div class="k">Impressions</div></div>'
+   +'<div class="stat"><div class="v">'+num(clicks)+'</div><div class="k">Clicks</div></div>'
+   +'<div class="stat"><div class="v">'+(leads>0?money(cost/leads):'—')+'</div><div class="k">Cost / lead</div></div>'
+   +'<div class="stat"><div class="v">'+num(cust)+'</div><div class="k">Customers</div></div>'
+   +'<div class="stat"><div class="v">'+money(rev)+'</div><div class="k">Revenue</div></div>'
+   +'<div class="stat"><div class="v">'+money(cost)+'</div><div class="k">Budget</div></div></div>';
+  var el=document.getElementById('res');el.innerHTML=html;el.classList.add('show');
+}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Nextdoor Ads Cost Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://denrod25-del.github.io/marketing-calculators/nextdoor-ads-cost-calculator/","description":"Estimate Nextdoor ad impressions, clicks, leads, cost per lead and ROI."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does it cost to advertise on Nextdoor?","acceptedAnswer":{"@type":"Answer","text":"Roughly $10 to $20 CPM or $2.50 to $3.50 per click via Ads Manager; Local Deals can start at just a few dollars."}},{"@type":"Question","name":"Are Nextdoor ads worth it?","acceptedAnswer":{"@type":"Answer","text":"For local home and service businesses, often yes. The audience is verified neighbors with high local intent, so recommendations convert like referrals."}},{"@type":"Question","name":"Do I need a paid ad to use Nextdoor?","acceptedAnswer":{"@type":"Answer","text":"No. A free Business Page and responding to neighbor recommendations drives organic leads; ads amplify that reach."}}]}</script>
+</body>
+</html>
