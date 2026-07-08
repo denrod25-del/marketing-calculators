@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0B1020">
+<title>Google Ads / PPC Budget Calculator — Clicks, Leads and Budget Needed</title>
+<meta name="description" content="Free PPC budget calculator for Google Ads. Estimate clicks, leads, cost per lead and customers from your budget and CPC — or work backward from a lead goal to the budget you need. 2026 CPC benchmarks by industry.">
+<link rel="canonical" href="https://denrod25-del.github.io/marketing-calculators/ppc-budget-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Google Ads / PPC Budget Calculator">
+<meta property="og:description" content="Estimate clicks, leads and the budget you need, with 2026 CPC benchmarks.">
+<meta property="og:url" content="https://denrod25-del.github.io/marketing-calculators/ppc-budget-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0B1020;color:#E6EAF3;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;padding:16px}
+.wrap{max-width:640px;margin:0 auto}
+a{color:#8FA8FF;text-decoration:none}
+header.top{text-align:center;padding:12px 0 4px}
+header.top .brand{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#6D8BFF;font-weight:700}
+h1{font-size:1.45rem;font-weight:800;line-height:1.22;margin:10px 0 8px;text-align:center}
+.lead{color:#9AA6BF;font-size:.95rem;text-align:center}
+.card{background:#141B2E;border:1px solid #232C44;border-radius:16px;padding:18px;margin:14px 0}
+.card h2{font-size:1.1rem;color:#6D8BFF;margin-bottom:6px}
+.sub{color:#9AA6BF;font-size:.85rem;margin-bottom:12px}
+.modes{display:flex;gap:6px;margin-bottom:14px;background:#0B1020;border-radius:10px;padding:4px;border:1px solid #232C44}
+.modes button{flex:1;padding:9px;border:none;background:none;color:#9AA6BF;font-weight:700;font-size:.82rem;border-radius:8px;cursor:pointer}
+.modes button.active{background:#6D8BFF;color:#0B1020}
+.pane{display:none}.pane.active{display:block}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:.82rem;color:#C7D0E4;margin-bottom:5px;font-weight:600}
+.inp{display:flex;align-items:center;background:#0B1020;border:1px solid #2A3653;border-radius:10px;overflow:hidden}
+.inp span{padding:0 11px;color:#94A3B8;background:#1A2338;align-self:stretch;display:flex;align-items:center;font-size:.9rem}
+.inp input,.inp select{flex:1;background:transparent;border:none;color:#F1F5F9;padding:11px;font-size:.95rem;outline:none;width:100%}
+.inp select{cursor:pointer}
+.hint{font-size:.78rem;color:#34D399;margin-top:5px;font-weight:600}
+.btn{width:100%;padding:13px;background:#6D8BFF;color:#0B1020;font-weight:800;font-size:.98rem;border:none;border-radius:11px;cursor:pointer;margin-top:4px}
+.btn:hover{background:#87a0ff}
+.result{display:none;margin-top:14px;border-top:1px dashed #2A3653;padding-top:14px}
+.result.show{display:block}
+.big{text-align:center;margin-bottom:12px}
+.big .n{font-size:2.1rem;font-weight:800;color:#34D399;line-height:1}
+.big .l{color:#9AA6BF;font-size:.82rem;margin-top:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:#0B1020;border:1px solid #232C44;border-radius:10px;padding:11px}
+.stat .v{font-size:1.05rem;font-weight:700}
+.stat .k{font-size:.7rem;color:#94A3B8;margin-top:2px;text-transform:uppercase;letter-spacing:.03em}
+.guide h2{font-size:1.08rem;color:#6D8BFF;margin:18px 0 6px}
+.guide p{color:#C7D0E4;font-size:.9rem;margin-bottom:8px}
+.guide table{width:100%;border-collapse:collapse;font-size:.82rem;margin:8px 0}
+.guide th,.guide td{border:1px solid #2A3653;padding:7px 9px;text-align:left}
+.guide th{background:#1A2338;color:#6D8BFF}
+.faq .q{font-weight:700;color:#E6EAF3;font-size:.92rem;margin-top:10px}
+.faq .a{color:#C7D0E4;font-size:.88rem}
+.email{background:#141B2E;border:1px solid #2A3653;border-radius:16px;padding:18px;text-align:center;margin:16px 0}
+.email h3{font-size:1.05rem;margin-bottom:6px}
+.email p{color:#9AA6BF;font-size:.86rem;margin-bottom:12px}
+.email form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.email input[type=email]{flex:1;min-width:190px;background:#0B1020;border:1px solid #2A3653;border-radius:10px;color:#F1F5F9;padding:12px;font-size:.95rem}
+.email button{background:#6D8BFF;color:#0B1020;font-weight:800;border:none;border-radius:10px;padding:12px 18px;cursor:pointer}
+.toolnav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0}
+.toolnav a{background:#141B2E;border:1px solid #232C44;border-radius:9px;padding:8px 12px;font-size:.8rem}
+.note{font-size:.75rem;color:#64748B;margin-top:10px}
+footer{text-align:center;color:#5B6480;font-size:.75rem;padding:22px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">Marketing Calculators</div></header>
+<h1>Google Ads / PPC Budget Calculator</h1>
+<p class="lead">See what your budget buys — or work backward from a lead goal to the budget you need.</p>
+
+<div class="card">
+  <div class="modes">
+    <button id="m_fwd" class="active" onclick="mode('fwd')">Budget → results</button>
+    <button id="m_rev" onclick="mode('rev')">Goal → budget</button>
+  </div>
+  <div class="field"><label>Industry (sets typical CPC)</label><div class="inp"><select id="ind" onchange="setCpc()"></select></div><div class="hint" id="hint"></div></div>
+
+  <div class="pane active" id="p_fwd">
+    <div class="field"><label>Monthly budget ($)</label><div class="inp"><span>$</span><input type="number" id="f_budget" value="2000"></div></div>
+    <div class="field"><label>Average cost per click ($)</label><div class="inp"><span>$</span><input type="number" id="cpc" value="8.33" step="0.1"></div></div>
+    <div class="field"><label>Landing-page conversion (clicks → leads) %</label><div class="inp"><input type="number" id="lp" value="6"><span>%</span></div></div>
+    <div class="field"><label>Lead-to-customer close rate %</label><div class="inp"><input type="number" id="close" value="30"><span>%</span></div></div>
+    <div class="field"><label>Average sale value ($)</label><div class="inp"><span>$</span><input type="number" id="sale" value="900"></div></div>
+    <button class="btn" onclick="calcFwd()">Calculate results</button>
+    <div class="result" id="f_res"></div>
+  </div>
+
+  <div class="pane" id="p_rev">
+    <div class="field"><label>Leads you want per month</label><div class="inp"><input type="number" id="r_leads" value="50"></div></div>
+    <div class="field"><label>Average cost per click ($)</label><div class="inp"><span>$</span><input type="number" id="cpc2" value="8.33" step="0.1"></div></div>
+    <div class="field"><label>Landing-page conversion (clicks → leads) %</label><div class="inp"><input type="number" id="lp2" value="6"><span>%</span></div></div>
+    <button class="btn" onclick="calcRev()">Calculate budget needed</button>
+    <div class="result" id="r_res"></div>
+  </div>
+</div>
+
+<div class="card guide">
+  <h2>How PPC budgeting works</h2>
+  <p>Your budget buys clicks, clicks convert to leads, and leads close into customers: <strong>clicks = budget ÷ CPC</strong>, <strong>leads = clicks × landing-page conversion</strong>, <strong>customers = leads × close rate</strong>. Working backward, the budget for a lead goal is <strong>(leads ÷ conversion) × CPC</strong>.</p>
+  <h2>Average Google Ads CPC by industry (2026)</h2>
+  <table>
+    <tr><th>Industry</th><th>Avg CPC</th></tr>
+    <tr><td>All-industry average</td><td>$2.96</td></tr>
+    <tr><td>Home &amp; home improvement</td><td>$8.33</td></tr>
+    <tr><td>Legal services</td><td>$9.87</td></tr>
+    <tr><td>Dental</td><td>$8.00</td></tr>
+    <tr><td>Restaurants / food</td><td>$2.05</td></tr>
+    <tr><td>Retail / e-commerce</td><td>$1.50</td></tr>
+  </table>
+  <h2>How to lower cost per lead</h2>
+  <p>Raise your landing-page conversion before buying more clicks — going from 4% to 8% halves your cost per lead. Tighten keyword match and negatives, improve Quality Score, and make sure every lead gets a fast follow-up so more of them close.</p>
+  <h2>Frequently asked questions</h2>
+  <div class="faq">
+    <div class="q">How much should I budget for Google Ads?</div>
+    <div class="a">Start from your lead goal: leads ÷ landing-page conversion = clicks, then clicks × CPC = budget. Use the Goal → budget mode above.</div>
+    <div class="q">What is a good PPC conversion rate?</div>
+    <div class="a">Landing-page conversion of 5%–12% is typical; high-intent search with a focused page can exceed that.</div>
+    <div class="q">Why is my cost per click so high?</div>
+    <div class="a">Competitive industries like legal, home services, and dental have CPCs of $8–$10+. Better Quality Score and tighter targeting reduce it.</div>
+  </div>
+  <p class="note">Estimates for planning only.</p>
+</div>
+
+<div class="email">
+  <h3>Get more free marketing calculators</h3>
+  <p>New tools and benchmarks, straight to your inbox. No spam.</p>
+  <form action="https://bsymbolic.us16.list-manage.com/subscribe/post?u=878f465eb321da5bb4ba0d116&amp;id=7fc148b6b0" method="post" target="_blank" novalidate>
+    <input type="email" name="EMAIL" placeholder="you@email.com" required>
+    <div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_878f465eb321da5bb4ba0d116_7fc148b6b0" tabindex="-1" value=""></div>
+    <button type="submit">Get updates</button>
+  </form>
+</div>
+
+<div class="toolnav">
+  <a href="/marketing-calculators/">All calculators</a>
+  <a href="/marketing-calculators/marketing-roi-calculator/">Marketing ROI</a>
+  <a href="/marketing-calculators/cpm-calculator/">CPM calculator</a>
+</div>
+<footer>Marketing Calculators · free tools for planning campaigns</footer>
+</div>
+
+<script>
+var CPC={"All-industry average":2.96,"Home & home improvement":8.33,"Legal services":9.87,"Dental":8.00,"B2B / technology":3.80,"Travel":2.14,"Restaurants / food":2.05,"Retail / e-commerce":1.50};
+var money=function(n){return '$'+Math.round(n).toLocaleString();};
+var money2=function(n){return '$'+(n).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});};
+var num=function(n){return Math.round(n).toLocaleString();};
+var V=function(id){return parseFloat(document.getElementById(id).value)||0;};
+var sel=document.getElementById('ind');for(var k in CPC){var o=document.createElement('option');o.value=k;o.textContent=k;sel.appendChild(o);}
+sel.value="Home & home improvement";
+function setCpc(){var v=CPC[document.getElementById('ind').value];document.getElementById('cpc').value=v;document.getElementById('cpc2').value=v;document.getElementById('hint').textContent='Typical CPC: '+money2(v);}
+setCpc();
+function mode(m){document.getElementById('p_fwd').classList.toggle('active',m==='fwd');document.getElementById('p_rev').classList.toggle('active',m==='rev');document.getElementById('m_fwd').classList.toggle('active',m==='fwd');document.getElementById('m_rev').classList.toggle('active',m==='rev');}
+function calcFwd(){
+  var budget=V('f_budget'),cpc=V('cpc');var clicks=cpc>0?budget/cpc:0;var leads=clicks*V('lp')/100;var cust=leads*V('close')/100;var rev=cust*V('sale');
+  var roi=budget>0?(rev-budget)/budget*100:0;
+  var html='<div class="big"><div class="n">'+num(leads)+'</div><div class="l">estimated leads / month</div></div><div class="grid">'
+   +'<div class="stat"><div class="v">'+num(clicks)+'</div><div class="k">Clicks</div></div>'
+   +'<div class="stat"><div class="v">'+(leads>0?money(budget/leads):'—')+'</div><div class="k">Cost / lead</div></div>'
+   +'<div class="stat"><div class="v">'+num(cust)+'</div><div class="k">Customers</div></div>'
+   +'<div class="stat"><div class="v">'+money(rev)+'</div><div class="k">Revenue</div></div>'
+   +'<div class="stat"><div class="v">'+(roi>=0?'+':'')+Math.round(roi)+'%</div><div class="k">ROI</div></div>'
+   +'<div class="stat"><div class="v">'+money(budget)+'</div><div class="k">Budget</div></div></div>';
+  var el=document.getElementById('f_res');el.innerHTML=html;el.classList.add('show');
+}
+function calcRev(){
+  var leads=V('r_leads'),cpc=V('cpc2'),lp=V('lp2');var clicks=lp>0?leads/(lp/100):0;var budget=clicks*cpc;
+  var html='<div class="big"><div class="n">'+money(budget)+'</div><div class="l">monthly budget needed for '+num(leads)+' leads</div></div><div class="grid">'
+   +'<div class="stat"><div class="v">'+num(clicks)+'</div><div class="k">Clicks needed</div></div>'
+   +'<div class="stat"><div class="v">'+money2(cpc)+'</div><div class="k">Cost / click</div></div>'
+   +'<div class="stat"><div class="v">'+(leads>0?money(budget/leads):'—')+'</div><div class="k">Cost / lead</div></div>'
+   +'<div class="stat"><div class="v">'+lp+'%</div><div class="k">LP conversion</div></div></div>';
+  var el=document.getElementById('r_res');el.innerHTML=html;el.classList.add('show');
+}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Google Ads PPC Budget Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://denrod25-del.github.io/marketing-calculators/ppc-budget-calculator/","description":"Estimate clicks, leads and the budget you need, with 2026 CPC benchmarks."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much should I budget for Google Ads?","acceptedAnswer":{"@type":"Answer","text":"Start from your lead goal: leads divided by landing-page conversion equals clicks, then clicks times CPC equals budget."}},{"@type":"Question","name":"What is a good PPC conversion rate?","acceptedAnswer":{"@type":"Answer","text":"Landing-page conversion of 5% to 12% is typical; high-intent search with a focused page can exceed that."}},{"@type":"Question","name":"Why is my cost per click so high?","acceptedAnswer":{"@type":"Answer","text":"Competitive industries like legal, home services and dental have CPCs of $8 to $10 or more. Better Quality Score and tighter targeting reduce it."}}]}</script>
+</body>
+</html>
