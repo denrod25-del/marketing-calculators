@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0B1020">
+<title>Cost Per View (CPV) Calculator — Video Ad Cost Per View</title>
+<meta name="description" content="Free cost per view calculator for video ads. Enter any two of spend, views and CPV to solve the third, with 2026 CPV benchmarks for YouTube and social video.">
+<link rel="canonical" href="https://denrod25-del.github.io/marketing-calculators/cost-per-view-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cost Per View (CPV) Calculator — Video Ad Cost Per View">
+<meta property="og:description" content="Free cost per view calculator for video ads. Enter any two of spend, views and CPV to solve the third, with 2026 CPV benchmarks for YouTube and social video.">
+<meta property="og:url" content="https://denrod25-del.github.io/marketing-calculators/cost-per-view-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0B1020;color:#E6EAF3;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;padding:16px}
+.wrap{max-width:640px;margin:0 auto}
+a{color:#8FA8FF;text-decoration:none}
+header.top{text-align:center;padding:12px 0 4px}
+header.top .brand{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#6D8BFF;font-weight:700}
+h1{font-size:1.42rem;font-weight:800;line-height:1.22;margin:10px 0 8px;text-align:center}
+.lead{color:#9AA6BF;font-size:.95rem;text-align:center}
+.card{background:#141B2E;border:1px solid #232C44;border-radius:16px;padding:18px;margin:14px 0}
+.card h2{font-size:1.1rem;color:#6D8BFF;margin-bottom:6px}
+.sub{color:#9AA6BF;font-size:.85rem;margin-bottom:12px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:.82rem;color:#C7D0E4;margin-bottom:5px;font-weight:600}
+.inp{display:flex;align-items:center;background:#0B1020;border:1px solid #2A3653;border-radius:10px;overflow:hidden}
+.inp span{padding:0 11px;color:#94A3B8;background:#1A2338;align-self:stretch;display:flex;align-items:center;font-size:.9rem}
+.inp input,.inp select{flex:1;background:transparent;border:none;color:#F1F5F9;padding:11px;font-size:.95rem;outline:none;width:100%}
+.inp select{cursor:pointer}
+.hint{font-size:.78rem;color:#34D399;margin-top:5px;font-weight:600}
+.opt{font-size:.78rem;color:#64748B;margin:14px 0 8px;text-transform:uppercase;letter-spacing:.05em}
+.btn{width:100%;padding:13px;background:#6D8BFF;color:#0B1020;font-weight:800;font-size:.98rem;border:none;border-radius:11px;cursor:pointer;margin-top:4px}
+.btn:hover{background:#87a0ff}
+.result{display:none;margin-top:14px;border-top:1px dashed #2A3653;padding-top:14px}
+.result.show{display:block}
+.big{text-align:center;margin-bottom:12px}
+.big .n{font-size:2.1rem;font-weight:800;color:#34D399;line-height:1}
+.big .n.bad{color:#F87171}.big .n.mid{color:#F4B942}
+.big .l{color:#9AA6BF;font-size:.82rem;margin-top:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:#0B1020;border:1px solid #232C44;border-radius:10px;padding:11px}
+.stat .v{font-size:1.05rem;font-weight:700}
+.stat .k{font-size:.7rem;color:#94A3B8;margin-top:2px;text-transform:uppercase;letter-spacing:.03em}
+.guide h2{font-size:1.08rem;color:#6D8BFF;margin:18px 0 6px}
+.guide p{color:#C7D0E4;font-size:.9rem;margin-bottom:8px}
+.guide table{width:100%;border-collapse:collapse;font-size:.82rem;margin:8px 0}
+.guide th,.guide td{border:1px solid #2A3653;padding:7px 9px;text-align:left}
+.guide th{background:#1A2338;color:#6D8BFF}
+.faq .q{font-weight:700;color:#E6EAF3;font-size:.92rem;margin-top:10px}
+.faq .a{color:#C7D0E4;font-size:.88rem}
+.email{background:#141B2E;border:1px solid #2A3653;border-radius:16px;padding:18px;text-align:center;margin:16px 0}
+.email h3{font-size:1.05rem;margin-bottom:6px}
+.email p{color:#9AA6BF;font-size:.86rem;margin-bottom:12px}
+.email form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.email input[type=email]{flex:1;min-width:190px;background:#0B1020;border:1px solid #2A3653;border-radius:10px;color:#F1F5F9;padding:12px;font-size:.95rem}
+.email button{background:#6D8BFF;color:#0B1020;font-weight:800;border:none;border-radius:10px;padding:12px 18px;cursor:pointer}
+.toolnav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0}
+.toolnav a{background:#141B2E;border:1px solid #232C44;border-radius:9px;padding:8px 12px;font-size:.8rem}
+.note{font-size:.75rem;color:#64748B;margin-top:10px}
+footer{text-align:center;color:#5B6480;font-size:.75rem;padding:22px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">Marketing Calculators</div></header>
+<h1>Cost Per View (CPV) Calculator</h1>
+<p class="lead">Video ad efficiency — solve for cost per view, total views, or budget.</p>
+<div class="card">
+  <h2>Solve cost per view</h2>
+  <div class="sub">CPV = spend &divide; views. Leave one field at 0 and press Solve.</div>
+  <div class="field"><label>Ad spend ($)</label><div class="inp"><span>$</span><input type="number" id="spend" value="2000"></div></div>
+  <div class="field"><label>Views</label><div class="inp"><input type="number" id="views" value="0"></div></div>
+  <div class="field"><label>Cost per view ($)</label><div class="inp"><span>$</span><input type="number" id="cpv" value="0.05" step="0.01"></div></div>
+  <button class="btn" onclick="calc()">Solve</button>
+  <div class="result" id="res"></div>
+</div>
+<div class="card guide">
+  <h2>What is cost per view?</h2><p>CPV is what you pay each time someone views your video ad: <strong>CPV = spend &divide; views</strong>. It's the standard efficiency metric for video, especially YouTube skippable ads where you're only charged when a viewer watches enough of the ad or interacts.</p>
+  <h2>Typical CPV benchmarks</h2><p>YouTube skippable in-stream CPV commonly runs <strong>$0.03–$0.12</strong> per view; social video views can be cheaper or dearer depending on the platform and how a &quot;view&quot; is counted (2 seconds vs. 30 seconds vs. completed). Always check the view definition before comparing platforms.</p>
+  <h2>CPV vs CPM</h2><p>CPV charges per view; CPM charges per 1,000 impressions whether or not they're watched. For a view-based goal, CPV aligns cost with attention. This tool also shows the equivalent CPM so you can compare a CPV buy against impression-based inventory.</p>
+  <h2>Frequently asked questions</h2>
+  <div class="faq">
+    <div class="q">How do I calculate cost per view?</div>
+    <div class="a">Divide total ad spend by the number of views. This tool also solves for views or spend if you know the other two.</div>
+    <div class="q">What is a good cost per view?</div>
+    <div class="a">YouTube skippable in-stream often runs $0.03–$0.12 per view; it varies by platform, targeting and how a view is defined.</div>
+    <div class="q">What's the difference between CPV and CPM?</div>
+    <div class="a">CPV charges per view; CPM charges per 1,000 impressions regardless of whether they're watched.</div>
+  </div>
+  <p class="note">Estimates for planning only.</p>
+</div>
+<div class="email"><h3>Get more free marketing calculators</h3><p>New tools and benchmarks, straight to your inbox. No spam.</p><form action="https://bsymbolic.us16.list-manage.com/subscribe/post?u=878f465eb321da5bb4ba0d116&amp;id=7fc148b6b0" method="post" target="_blank" novalidate><input type="email" name="EMAIL" placeholder="you@email.com" required><div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_878f465eb321da5bb4ba0d116_7fc148b6b0" tabindex="-1" value=""></div><button type="submit">Get updates</button></form></div>
+<div class="toolnav">
+  <a href="/marketing-calculators/">All calculators</a>
+  <a href="/marketing-calculators/youtube-ads-cost-calculator/">YouTube ads</a>
+  <a href="/marketing-calculators/cpm-calculator/">CPM calculator</a>
+</div>
+<footer>Marketing Calculators &middot; free tools for planning campaigns</footer>
+</div>
+<script>var money=function(n){return '$'+Math.round(n).toLocaleString();};var money2=function(n){return '$'+(n).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});};var money3=function(n){return '$'+(n).toLocaleString(undefined,{minimumFractionDigits:3,maximumFractionDigits:3});};var num=function(n){return Math.round(n).toLocaleString();};var V=function(id){return parseFloat(document.getElementById(id).value)||0;};
+function solve(){}
+function calc(){var spend=V('spend'),views=V('views'),cpv=V('cpv');var solved='',msg='';
+if(views<=0&&spend>0&&cpv>0){views=spend/cpv;solved=num(views);msg='total views';document.getElementById('views').value=Math.round(views);}
+else if(spend<=0&&views>0&&cpv>0){spend=views*cpv;solved=money(spend);msg='ad spend';document.getElementById('spend').value=Math.round(spend*100)/100;}
+else if(cpv<=0&&spend>0&&views>0){cpv=spend/views;solved=money3(cpv);msg='cost per view';document.getElementById('cpv').value=Math.round(cpv*1000)/1000;}
+else if(spend>0&&views>0){cpv=spend/views;solved=money3(cpv);msg='cost per view (recalculated)';document.getElementById('cpv').value=Math.round(cpv*1000)/1000;}
+else{solved='—';msg='fill in two fields';}
+var html='<div class="big"><div class="n">'+solved+'</div><div class="l">'+msg+'</div></div><div class="grid">'
++'<div class="stat"><div class="v">'+money(V('spend'))+'</div><div class="k">Spend</div></div>'
++'<div class="stat"><div class="v">'+num(V('views'))+'</div><div class="k">Views</div></div>'
++'<div class="stat"><div class="v">'+money3(V('cpv'))+'</div><div class="k">Cost / view</div></div>'
++'<div class="stat"><div class="v">'+(V('views')>0?money2(V('spend')/(V('views')/1000)):'—')+'</div><div class="k">Equivalent CPM</div></div></div>';
+document.getElementById('res').innerHTML=html;document.getElementById('res').classList.add('show');}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Cost Per View Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://denrod25-del.github.io/marketing-calculators/cost-per-view-calculator/","description":"Free cost per view calculator for video ads. Enter any two of spend, views and CPV to solve the third, with 2026 CPV benchmarks for YouTube and social video."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate cost per view?","acceptedAnswer":{"@type":"Answer","text":"Divide total ad spend by the number of views. This tool also solves for views or spend if you know the other two."}},{"@type":"Question","name":"What is a good cost per view?","acceptedAnswer":{"@type":"Answer","text":"YouTube skippable in-stream often runs $0.03–$0.12 per view; it varies by platform, targeting and how a view is defined."}},{"@type":"Question","name":"What's the difference between CPV and CPM?","acceptedAnswer":{"@type":"Answer","text":"CPV charges per view; CPM charges per 1,000 impressions regardless of whether they're watched."}}]}</script>
+</body>
+</html>
