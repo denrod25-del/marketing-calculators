@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0B1020">
+<title>Earned Media Value (EMV) Calculator — Value of PR, Influencer &amp; Social Reach</title>
+<meta name="description" content="Free earned media value calculator. Estimate the ad-equivalent value of impressions and engagement from PR, influencer and organic social, using a CPM rate and engagement multiplier.">
+<link rel="canonical" href="https://denrod25-del.github.io/marketing-calculators/earned-media-value-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Earned Media Value (EMV) Calculator — Value of PR, Influencer &amp; Social Reach">
+<meta property="og:description" content="Free earned media value calculator. Estimate the ad-equivalent value of impressions and engagement from PR, influencer and organic social, using a CPM rate and engagement multiplier.">
+<meta property="og:url" content="https://denrod25-del.github.io/marketing-calculators/earned-media-value-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0B1020;color:#E6EAF3;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;padding:16px}
+.wrap{max-width:640px;margin:0 auto}
+a{color:#8FA8FF;text-decoration:none}
+header.top{text-align:center;padding:12px 0 4px}
+header.top .brand{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#6D8BFF;font-weight:700}
+h1{font-size:1.42rem;font-weight:800;line-height:1.22;margin:10px 0 8px;text-align:center}
+.lead{color:#9AA6BF;font-size:.95rem;text-align:center}
+.card{background:#141B2E;border:1px solid #232C44;border-radius:16px;padding:18px;margin:14px 0}
+.card h2{font-size:1.1rem;color:#6D8BFF;margin-bottom:6px}
+.sub{color:#9AA6BF;font-size:.85rem;margin-bottom:12px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:.82rem;color:#C7D0E4;margin-bottom:5px;font-weight:600}
+.inp{display:flex;align-items:center;background:#0B1020;border:1px solid #2A3653;border-radius:10px;overflow:hidden}
+.inp span{padding:0 11px;color:#94A3B8;background:#1A2338;align-self:stretch;display:flex;align-items:center;font-size:.9rem}
+.inp input,.inp select{flex:1;background:transparent;border:none;color:#F1F5F9;padding:11px;font-size:.95rem;outline:none;width:100%}
+.inp select{cursor:pointer}
+.opt{font-size:.78rem;color:#64748B;margin:14px 0 8px;text-transform:uppercase;letter-spacing:.05em}
+.btn{width:100%;padding:13px;background:#6D8BFF;color:#0B1020;font-weight:800;font-size:.98rem;border:none;border-radius:11px;cursor:pointer;margin-top:4px}
+.btn:hover{background:#87a0ff}
+.result{display:none;margin-top:14px;border-top:1px dashed #2A3653;padding-top:14px}
+.result.show{display:block}
+.big{text-align:center;margin-bottom:12px}
+.big .n{font-size:2.1rem;font-weight:800;color:#34D399;line-height:1}
+.big .n.bad{color:#F87171}.big .n.mid{color:#F4B942}
+.big .l{color:#9AA6BF;font-size:.82rem;margin-top:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:#0B1020;border:1px solid #232C44;border-radius:10px;padding:11px}
+.stat .v{font-size:1.05rem;font-weight:700}
+.stat .k{font-size:.7rem;color:#94A3B8;margin-top:2px;text-transform:uppercase;letter-spacing:.03em}
+.guide h2{font-size:1.08rem;color:#6D8BFF;margin:18px 0 6px}
+.guide p{color:#C7D0E4;font-size:.9rem;margin-bottom:8px}
+.guide table{width:100%;border-collapse:collapse;font-size:.82rem;margin:8px 0}
+.guide th,.guide td{border:1px solid #2A3653;padding:7px 9px;text-align:left}
+.guide th{background:#1A2338;color:#6D8BFF}
+.faq .q{font-weight:700;color:#E6EAF3;font-size:.92rem;margin-top:10px}
+.faq .a{color:#C7D0E4;font-size:.88rem}
+.email{background:#141B2E;border:1px solid #2A3653;border-radius:16px;padding:18px;text-align:center;margin:16px 0}
+.email h3{font-size:1.05rem;margin-bottom:6px}
+.email p{color:#9AA6BF;font-size:.86rem;margin-bottom:12px}
+.email form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.email input[type=email]{flex:1;min-width:190px;background:#0B1020;border:1px solid #2A3653;border-radius:10px;color:#F1F5F9;padding:12px;font-size:.95rem}
+.email button{background:#6D8BFF;color:#0B1020;font-weight:800;border:none;border-radius:10px;padding:12px 18px;cursor:pointer}
+.toolnav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0}
+.toolnav a{background:#141B2E;border:1px solid #232C44;border-radius:9px;padding:8px 12px;font-size:.8rem}
+.note{font-size:.75rem;color:#64748B;margin-top:10px}
+footer{text-align:center;color:#5B6480;font-size:.75rem;padding:22px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">Marketing Calculators</div></header>
+<h1>Earned Media Value (EMV) Calculator</h1>
+<p class="lead">Put a dollar value on PR, influencer and organic reach you didn't pay for directly.</p>
+<div class="card">
+  <h2>Estimate your earned media value</h2>
+  <div class="sub">EMV converts free impressions into what they'd cost as paid ads.</div>
+  <div class="field"><label>Impressions / reach</label><div class="inp"><input type="number" id="imp" value="500000"></div></div>
+  <div class="field"><label>Benchmark CPM — paid rate for this channel ($)</label><div class="inp"><span>$</span><input type="number" id="cpm" value="10"></div></div>
+  <div class="field"><label>Engagements (likes, shares, comments)</label><div class="inp"><input type="number" id="eng" value="8000"></div></div>
+  <div class="field"><label>Engagement value multiplier</label><div class="inp"><input type="number" id="mult" value="1.5" step="0.1"></div></div>
+  <button class="btn" onclick="calc()">Calculate EMV</button>
+  <div class="result" id="res"></div>
+</div>
+<div class="card guide">
+  <h2>What is earned media value?</h2><p>Earned Media Value (EMV) estimates what your free exposure — press coverage, influencer mentions, organic social, shares — would have cost as paid advertising. The base is simply <strong>impressions &divide; 1,000 &times; a benchmark CPM</strong>, then a <strong>multiplier</strong> credits engagement, which is worth more than a passive impression because it carries trust.</p>
+  <h2>How to use EMV</h2><p>EMV is best for comparing PR, influencer and organic efforts on a common dollar scale and reporting the value of activity that has no direct invoice. Pick a realistic CPM for the channel and a conservative multiplier — inflated assumptions make EMV meaningless.</p>
+  <h2>EMV's limits</h2><p>EMV is an estimate, not real revenue. An earned impression isn't identical to a paid one, and engagement quality varies. Use it as a directional value and a comparison tool, and pair it with hard metrics like referral traffic, leads and sales for the full picture.</p>
+  <h2>Frequently asked questions</h2>
+  <div class="faq">
+    <div class="q">How is earned media value calculated?</div>
+    <div class="a">Impressions divided by 1,000 times a benchmark CPM gives the base ad-equivalent value; an engagement multiplier then credits interactions.</div>
+    <div class="q">What multiplier should I use?</div>
+    <div class="a">A conservative one — often 1x to 2x. Higher multipliers inflate EMV and reduce its credibility.</div>
+    <div class="q">Is EMV real revenue?</div>
+    <div class="a">No. It's an estimate of ad-equivalent value for comparison and reporting, not money earned. Pair it with real metrics like leads and sales.</div>
+  </div>
+  <p class="note">Estimates for planning only.</p>
+</div>
+<div class="email"><h3>Get more free marketing calculators</h3><p>New tools and benchmarks, straight to your inbox. No spam.</p><form action="https://bsymbolic.us16.list-manage.com/subscribe/post?u=878f465eb321da5bb4ba0d116&amp;id=7fc148b6b0" method="post" target="_blank" novalidate><input type="email" name="EMAIL" placeholder="you@email.com" required><div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_878f465eb321da5bb4ba0d116_7fc148b6b0" tabindex="-1" value=""></div><button type="submit">Get updates</button></form></div>
+<div class="toolnav">
+  <a href="/marketing-calculators/">All calculators</a>
+  <a href="/marketing-calculators/engagement-rate-calculator/">Engagement rate</a>
+  <a href="/marketing-calculators/influencer-marketing-cost-calculator/">Influencer cost</a>
+</div>
+<footer>Marketing Calculators &middot; free tools for planning campaigns</footer>
+</div>
+<script>var money=function(n){return '$'+Math.round(n).toLocaleString();};var money2=function(n){return '$'+(n).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});};var num=function(n){return Math.round(n).toLocaleString();};var V=function(id){return parseFloat(document.getElementById(id).value)||0;};
+function calc(){var imp=V('imp'),cpm=V('cpm'),eng=V('eng'),mult=V('mult');
+var base=imp/1000*cpm;var emv=base*mult;var perEng=eng>0?emv/eng:0;var erate=imp>0?eng/imp*100:0;
+var html='<div class="big"><div class="n">'+money(emv)+'</div><div class="l">estimated earned media value</div></div><div class="grid">'
++'<div class="stat"><div class="v">'+money(base)+'</div><div class="k">Base ad-equivalent</div></div>'
++'<div class="stat"><div class="v">'+mult+'x</div><div class="k">Engagement multiplier</div></div>'
++'<div class="stat"><div class="v">'+num(imp)+'</div><div class="k">Impressions</div></div>'
++'<div class="stat"><div class="v">'+erate.toFixed(2)+'%</div><div class="k">Engagement rate</div></div>'
++'<div class="stat"><div class="v">'+money2(perEng)+'</div><div class="k">Value / engagement</div></div>'
++'<div class="stat"><div class="v">'+money2(cpm)+'</div><div class="k">Benchmark CPM</div></div></div>';
+document.getElementById('res').innerHTML=html;document.getElementById('res').classList.add('show');}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Earned Media Value Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://denrod25-del.github.io/marketing-calculators/earned-media-value-calculator/","description":"Free earned media value calculator. Estimate the ad-equivalent value of impressions and engagement from PR, influencer and organic social, using a CPM rate and engagement multiplier."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is earned media value calculated?","acceptedAnswer":{"@type":"Answer","text":"Impressions divided by 1,000 times a benchmark CPM gives the base ad-equivalent value; an engagement multiplier then credits interactions."}},{"@type":"Question","name":"What multiplier should I use?","acceptedAnswer":{"@type":"Answer","text":"A conservative one — often 1x to 2x. Higher multipliers inflate EMV and reduce its credibility."}},{"@type":"Question","name":"Is EMV real revenue?","acceptedAnswer":{"@type":"Answer","text":"No. It's an estimate of ad-equivalent value for comparison and reporting, not money earned. Pair it with real metrics like leads and sales."}}]}</script>
+</body>
+</html>
