@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0B1020">
+<title>Reach and Frequency Calculator — Impressions, Reach, Frequency and GRPs</title>
+<meta name="description" content="Free reach and frequency calculator for media planning. Enter any two of impressions, reach and frequency to solve for the third, plus effective reach and total cost from CPM.">
+<link rel="canonical" href="https://denrod25-del.github.io/marketing-calculators/reach-and-frequency-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Reach and Frequency Calculator — Impressions, Reach, Frequency and GRPs">
+<meta property="og:description" content="Free reach and frequency calculator for media planning. Enter any two of impressions, reach and frequency to solve for the third, plus effective reach and total cost from CPM.">
+<meta property="og:url" content="https://denrod25-del.github.io/marketing-calculators/reach-and-frequency-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0B1020;color:#E6EAF3;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;padding:16px}
+.wrap{max-width:640px;margin:0 auto}
+a{color:#8FA8FF;text-decoration:none}
+header.top{text-align:center;padding:12px 0 4px}
+header.top .brand{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#6D8BFF;font-weight:700}
+h1{font-size:1.42rem;font-weight:800;line-height:1.22;margin:10px 0 8px;text-align:center}
+.lead{color:#9AA6BF;font-size:.95rem;text-align:center}
+.card{background:#141B2E;border:1px solid #232C44;border-radius:16px;padding:18px;margin:14px 0}
+.card h2{font-size:1.1rem;color:#6D8BFF;margin-bottom:6px}
+.sub{color:#9AA6BF;font-size:.85rem;margin-bottom:12px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:.82rem;color:#C7D0E4;margin-bottom:5px;font-weight:600}
+.inp{display:flex;align-items:center;background:#0B1020;border:1px solid #2A3653;border-radius:10px;overflow:hidden}
+.inp span{padding:0 11px;color:#94A3B8;background:#1A2338;align-self:stretch;display:flex;align-items:center;font-size:.9rem}
+.inp input,.inp select{flex:1;background:transparent;border:none;color:#F1F5F9;padding:11px;font-size:.95rem;outline:none;width:100%}
+.inp select{cursor:pointer}
+.hint{font-size:.78rem;color:#34D399;margin-top:5px;font-weight:600}
+.opt{font-size:.78rem;color:#64748B;margin:14px 0 8px;text-transform:uppercase;letter-spacing:.05em}
+.btn{width:100%;padding:13px;background:#6D8BFF;color:#0B1020;font-weight:800;font-size:.98rem;border:none;border-radius:11px;cursor:pointer;margin-top:4px}
+.btn:hover{background:#87a0ff}
+.result{display:none;margin-top:14px;border-top:1px dashed #2A3653;padding-top:14px}
+.result.show{display:block}
+.big{text-align:center;margin-bottom:12px}
+.big .n{font-size:2.1rem;font-weight:800;color:#34D399;line-height:1}
+.big .n.bad{color:#F87171}.big .n.mid{color:#F4B942}
+.big .l{color:#9AA6BF;font-size:.82rem;margin-top:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:#0B1020;border:1px solid #232C44;border-radius:10px;padding:11px}
+.stat .v{font-size:1.05rem;font-weight:700}
+.stat .k{font-size:.7rem;color:#94A3B8;margin-top:2px;text-transform:uppercase;letter-spacing:.03em}
+.guide h2{font-size:1.08rem;color:#6D8BFF;margin:18px 0 6px}
+.guide p{color:#C7D0E4;font-size:.9rem;margin-bottom:8px}
+.guide table{width:100%;border-collapse:collapse;font-size:.82rem;margin:8px 0}
+.guide th,.guide td{border:1px solid #2A3653;padding:7px 9px;text-align:left}
+.guide th{background:#1A2338;color:#6D8BFF}
+.faq .q{font-weight:700;color:#E6EAF3;font-size:.92rem;margin-top:10px}
+.faq .a{color:#C7D0E4;font-size:.88rem}
+.email{background:#141B2E;border:1px solid #2A3653;border-radius:16px;padding:18px;text-align:center;margin:16px 0}
+.email h3{font-size:1.05rem;margin-bottom:6px}
+.email p{color:#9AA6BF;font-size:.86rem;margin-bottom:12px}
+.email form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.email input[type=email]{flex:1;min-width:190px;background:#0B1020;border:1px solid #2A3653;border-radius:10px;color:#F1F5F9;padding:12px;font-size:.95rem}
+.email button{background:#6D8BFF;color:#0B1020;font-weight:800;border:none;border-radius:10px;padding:12px 18px;cursor:pointer}
+.toolnav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0}
+.toolnav a{background:#141B2E;border:1px solid #232C44;border-radius:9px;padding:8px 12px;font-size:.8rem}
+.note{font-size:.75rem;color:#64748B;margin-top:10px}
+footer{text-align:center;color:#5B6480;font-size:.75rem;padding:22px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">Marketing Calculators</div></header>
+<h1>Reach &amp; Frequency Calculator</h1>
+<p class="lead">Media planning made simple — impressions = reach &times; frequency. Solve for any one.</p>
+<div class="card">
+  <h2>Plan reach &amp; frequency</h2>
+  <div class="sub">Leave one of the three at 0 and press Solve.</div>
+  <div class="field"><label>Unique reach (people)</label><div class="inp"><input type="number" id="reach" value="50000"></div></div>
+  <div class="field"><label>Average frequency (times each person sees it)</label><div class="inp"><input type="number" id="freq" value="4"></div></div>
+  <div class="field"><label>Total impressions</label><div class="inp"><input type="number" id="imp" value="0"></div></div>
+  <div class="opt">Optional</div>
+  <div class="field"><label>CPM — cost per 1,000 impressions ($)</label><div class="inp"><span>$</span><input type="number" id="cpm" value="10"></div></div>
+  <button class="btn" onclick="calc()">Solve</button>
+  <div class="result" id="res"></div>
+</div>
+<div class="card guide">
+  <h2>Reach vs frequency</h2><p>In media planning, <strong>reach</strong> is how many unique people see your ad and <strong>frequency</strong> is how many times each sees it. They're linked by <strong>impressions = reach &times; frequency</strong>. A fixed budget forces a trade-off: wide reach with low frequency, or narrower reach with higher frequency.</p>
+  <h2>How much frequency do you need?</h2><p>One exposure rarely sticks. A common rule of thumb is that people need to see a message <strong>at least 3 times</strong> before it registers — the &quot;effective frequency&quot; idea. For a new or complex offer, aim higher; for a familiar brand or simple reminder, lower frequency can work.</p>
+  <h2>Using this in planning</h2><p>Enter any two values to solve the third, then add a CPM to estimate cost. Use it to decide whether your budget is better spent reaching more people once or fewer people several times — the answer depends on your goal (awareness vs. driving action).</p>
+  <h2>Frequently asked questions</h2>
+  <div class="faq">
+    <div class="q">What is the difference between reach and frequency?</div>
+    <div class="a">Reach is the number of unique people who see your ad; frequency is how many times each person sees it. Impressions equal reach times frequency.</div>
+    <div class="q">What is a good ad frequency?</div>
+    <div class="a">Often at least 3 exposures to register a message. New or complex offers need more; familiar reminders need less.</div>
+    <div class="q">How do I calculate impressions?</div>
+    <div class="a">Multiply unique reach by average frequency. This tool also solves for reach or frequency if you know the other two.</div>
+  </div>
+  <p class="note">Estimates for planning only.</p>
+</div>
+<div class="email"><h3>Get more free marketing calculators</h3><p>New tools and benchmarks, straight to your inbox. No spam.</p><form action="https://bsymbolic.us16.list-manage.com/subscribe/post?u=878f465eb321da5bb4ba0d116&amp;id=7fc148b6b0" method="post" target="_blank" novalidate><input type="email" name="EMAIL" placeholder="you@email.com" required><div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_878f465eb321da5bb4ba0d116_7fc148b6b0" tabindex="-1" value=""></div><button type="submit">Get updates</button></form></div>
+<div class="toolnav">
+  <a href="/marketing-calculators/">All calculators</a>
+  <a href="/marketing-calculators/cpm-calculator/">CPM calculator</a>
+  <a href="/marketing-calculators/billboard-cost-calculator/">Billboard cost</a>
+</div>
+<footer>Marketing Calculators &middot; free tools for planning campaigns</footer>
+</div>
+<script>var money=function(n){return '$'+Math.round(n).toLocaleString();};var money2=function(n){return '$'+(n).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});};var num=function(n){return Math.round(n).toLocaleString();};var V=function(id){return parseFloat(document.getElementById(id).value)||0;};
+function calc(){var reach=V('reach'),freq=V('freq'),imp=V('imp'),cpm=V('cpm');var solved='',msg='';
+if(imp<=0&&reach>0&&freq>0){imp=reach*freq;solved=num(imp);msg='total impressions';document.getElementById('imp').value=Math.round(imp);}
+else if(reach<=0&&imp>0&&freq>0){reach=imp/freq;solved=num(reach);msg='unique reach';document.getElementById('reach').value=Math.round(reach);}
+else if(freq<=0&&imp>0&&reach>0){freq=imp/reach;solved=freq.toFixed(1)+'x';msg='average frequency';document.getElementById('freq').value=Math.round(freq*10)/10;}
+else if(reach>0&&freq>0){imp=reach*freq;solved=num(imp);msg='total impressions';document.getElementById('imp').value=Math.round(imp);}
+else{solved='—';msg='fill in two fields';}
+var cost=cpm>0?imp/1000*cpm:0;
+var html='<div class="big"><div class="n">'+solved+'</div><div class="l">'+msg+'</div></div><div class="grid">'
++'<div class="stat"><div class="v">'+num(V('reach'))+'</div><div class="k">Reach</div></div>'
++'<div class="stat"><div class="v">'+V('freq')+'x</div><div class="k">Frequency</div></div>'
++'<div class="stat"><div class="v">'+num(V('imp'))+'</div><div class="k">Impressions</div></div>'
++'<div class="stat"><div class="v">'+(cost>0?money(cost):'—')+'</div><div class="k">Est. cost (CPM)</div></div></div>';
+document.getElementById('res').innerHTML=html;document.getElementById('res').classList.add('show');}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Reach and Frequency Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://denrod25-del.github.io/marketing-calculators/reach-and-frequency-calculator/","description":"Free reach and frequency calculator for media planning. Enter any two of impressions, reach and frequency to solve for the third, plus effective reach and total cost from CPM."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between reach and frequency?","acceptedAnswer":{"@type":"Answer","text":"Reach is the number of unique people who see your ad; frequency is how many times each person sees it. Impressions equal reach times frequency."}},{"@type":"Question","name":"What is a good ad frequency?","acceptedAnswer":{"@type":"Answer","text":"Often at least 3 exposures to register a message. New or complex offers need more; familiar reminders need less."}},{"@type":"Question","name":"How do I calculate impressions?","acceptedAnswer":{"@type":"Answer","text":"Multiply unique reach by average frequency. This tool also solves for reach or frequency if you know the other two."}}]}</script>
+</body>
+</html>
