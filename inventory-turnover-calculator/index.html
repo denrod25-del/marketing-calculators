@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0B1020">
+<title>Inventory Turnover Calculator — Turns and Days of Inventory</title>
+<meta name="description" content="Free inventory turnover calculator. Enter cost of goods sold and average inventory to get your turnover ratio and days of inventory on hand.">
+<link rel="canonical" href="https://denrod25-del.github.io/marketing-calculators/inventory-turnover-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Inventory Turnover Calculator — Turns and Days of Inventory">
+<meta property="og:description" content="Free inventory turnover calculator. Enter cost of goods sold and average inventory to get your turnover ratio and days of inventory on hand.">
+<meta property="og:url" content="https://denrod25-del.github.io/marketing-calculators/inventory-turnover-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0B1020;color:#E6EAF3;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6;padding:16px}
+.wrap{max-width:640px;margin:0 auto}
+a{color:#8FA8FF;text-decoration:none}
+header.top{text-align:center;padding:12px 0 4px}
+header.top .brand{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:#6D8BFF;font-weight:700}
+h1{font-size:1.42rem;font-weight:800;line-height:1.22;margin:10px 0 8px;text-align:center}
+.lead{color:#9AA6BF;font-size:.95rem;text-align:center}
+.card{background:#141B2E;border:1px solid #232C44;border-radius:16px;padding:18px;margin:14px 0}
+.card h2{font-size:1.1rem;color:#6D8BFF;margin-bottom:6px}
+.sub{color:#9AA6BF;font-size:.85rem;margin-bottom:12px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:.82rem;color:#C7D0E4;margin-bottom:5px;font-weight:600}
+.inp{display:flex;align-items:center;background:#0B1020;border:1px solid #2A3653;border-radius:10px;overflow:hidden}
+.inp span{padding:0 11px;color:#94A3B8;background:#1A2338;align-self:stretch;display:flex;align-items:center;font-size:.9rem}
+.inp input,.inp select{flex:1;background:transparent;border:none;color:#F1F5F9;padding:11px;font-size:.95rem;outline:none;width:100%}
+.inp select{cursor:pointer}
+.hint{font-size:.78rem;color:#34D399;margin-top:5px;font-weight:600}
+.opt{font-size:.78rem;color:#64748B;margin:14px 0 8px;text-transform:uppercase;letter-spacing:.05em}
+.btn{width:100%;padding:13px;background:#6D8BFF;color:#0B1020;font-weight:800;font-size:.98rem;border:none;border-radius:11px;cursor:pointer;margin-top:4px}
+.btn:hover{background:#87a0ff}
+.result{display:none;margin-top:14px;border-top:1px dashed #2A3653;padding-top:14px}
+.result.show{display:block}
+.big{text-align:center;margin-bottom:12px}
+.big .n{font-size:2.1rem;font-weight:800;color:#34D399;line-height:1}
+.big .n.bad{color:#F87171}.big .n.mid{color:#F4B942}
+.big .l{color:#9AA6BF;font-size:.82rem;margin-top:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:#0B1020;border:1px solid #232C44;border-radius:10px;padding:11px}
+.stat .v{font-size:1.05rem;font-weight:700}
+.stat .k{font-size:.7rem;color:#94A3B8;margin-top:2px;text-transform:uppercase;letter-spacing:.03em}
+.guide h2{font-size:1.08rem;color:#6D8BFF;margin:18px 0 6px}
+.guide p{color:#C7D0E4;font-size:.9rem;margin-bottom:8px}
+.guide table{width:100%;border-collapse:collapse;font-size:.82rem;margin:8px 0}
+.guide th,.guide td{border:1px solid #2A3653;padding:7px 9px;text-align:left}
+.guide th{background:#1A2338;color:#6D8BFF}
+.faq .q{font-weight:700;color:#E6EAF3;font-size:.92rem;margin-top:10px}
+.faq .a{color:#C7D0E4;font-size:.88rem}
+.email{background:#141B2E;border:1px solid #2A3653;border-radius:16px;padding:18px;text-align:center;margin:16px 0}
+.email h3{font-size:1.05rem;margin-bottom:6px}
+.email p{color:#9AA6BF;font-size:.86rem;margin-bottom:12px}
+.email form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.email input[type=email]{flex:1;min-width:190px;background:#0B1020;border:1px solid #2A3653;border-radius:10px;color:#F1F5F9;padding:12px;font-size:.95rem}
+.email button{background:#6D8BFF;color:#0B1020;font-weight:800;border:none;border-radius:10px;padding:12px 18px;cursor:pointer}
+.toolnav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0}
+.toolnav a{background:#141B2E;border:1px solid #232C44;border-radius:9px;padding:8px 12px;font-size:.8rem}
+.note{font-size:.75rem;color:#64748B;margin-top:10px}
+footer{text-align:center;color:#5B6480;font-size:.75rem;padding:22px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">Marketing Calculators</div></header>
+<h1>Inventory Turnover Calculator</h1>
+<p class="lead">How many times you sell through and restock inventory in a year.</p>
+<div class="card">
+  <h2>Calculate inventory turnover</h2>
+  <div class="sub">Turnover = COGS &divide; average inventory.</div>
+  <div class="field"><label>Cost of goods sold — annual ($)</label><div class="inp"><span>$</span><input type="number" id="cogs" value="500000"></div></div>
+  <div class="field"><label>Average inventory value ($)</label><div class="inp"><span>$</span><input type="number" id="inv" value="100000"></div></div>
+  <button class="btn" onclick="calc()">Calculate turnover</button>
+  <div class="result" id="res"></div>
+</div>
+<div class="card guide">
+  <h2>What is inventory turnover?</h2><p>Inventory turnover is how many times you sell and replace your stock in a period: <strong>COGS &divide; average inventory</strong>. A turnover of 5 means you cycled through your average inventory five times in the year. Dividing 365 by turnover gives <strong>days of inventory on hand</strong> — how long stock sits before selling.</p>
+  <h2>Why it matters</h2><p>Inventory ties up cash and risks obsolescence. Higher turnover means you're converting stock to sales quickly and not over-investing in inventory. Too low suggests overstock, slow sellers or weak demand; extremely high can mean you're understocked and losing sales to stockouts.</p>
+  <h2>Benchmarks vary</h2><p>Good turnover depends heavily on the industry — grocery and fast fashion turn many times a year, while furniture or specialty goods turn far fewer. Compare to your category and your own trend, and use it alongside sell-through rate to manage buying and cash flow.</p>
+  <h2>Frequently asked questions</h2>
+  <div class="faq">
+    <div class="q">How do I calculate inventory turnover?</div>
+    <div class="a">Divide cost of goods sold by average inventory value. $500,000 COGS on $100,000 average inventory is 5 turns.</div>
+    <div class="q">What are days of inventory on hand?</div>
+    <div class="a">365 divided by your turnover ratio — the average number of days stock sits before it sells.</div>
+    <div class="q">What is a good inventory turnover?</div>
+    <div class="a">It's industry-specific. Grocery and fast fashion turn many times a year; big-ticket goods turn far less. Compare within your sector.</div>
+  </div>
+  <p class="note">Estimates for planning only.</p>
+</div>
+<div class="email"><h3>Get more free marketing calculators</h3><p>New tools and benchmarks, straight to your inbox. No spam.</p><form action="https://bsymbolic.us16.list-manage.com/subscribe/post?u=878f465eb321da5bb4ba0d116&amp;id=7fc148b6b0" method="post" target="_blank" novalidate><input type="email" name="EMAIL" placeholder="you@email.com" required><div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_878f465eb321da5bb4ba0d116_7fc148b6b0" tabindex="-1" value=""></div><button type="submit">Get updates</button></form></div>
+<div class="toolnav">
+  <a href="/marketing-calculators/">All calculators</a>
+  <a href="/marketing-calculators/sell-through-rate-calculator/">Sell-through rate</a>
+  <a href="/marketing-calculators/gross-margin-calculator/">Gross margin</a>
+</div>
+<footer>Marketing Calculators &middot; free tools for planning campaigns</footer>
+</div>
+<script>var money=function(n){return '$'+Math.round(n).toLocaleString();};var money2=function(n){return '$'+(n).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});};var money3=function(n){return '$'+(n).toLocaleString(undefined,{minimumFractionDigits:3,maximumFractionDigits:3});};var num=function(n){return Math.round(n).toLocaleString();};var V=function(id){return parseFloat(document.getElementById(id).value)||0;};
+function calc(){var cogs=V('cogs'),inv=V('inv');
+if(inv<=0){document.getElementById('res').innerHTML='<div class="big"><div class="n bad">—</div><div class="l">enter average inventory</div></div>';document.getElementById('res').classList.add('show');return;}
+var turns=cogs/inv;var days=turns>0?365/turns:0;var cls=turns>=4?'':(turns>=2?'mid':'bad');
+var html='<div class="big"><div class="n '+cls+'">'+turns.toFixed(1)+'x</div><div class="l">inventory turns per year</div></div><div class="grid">'
++'<div class="stat"><div class="v">'+Math.round(days)+' days</div><div class="k">Days inventory on hand</div></div>'
++'<div class="stat"><div class="v">'+money(cogs)+'</div><div class="k">Annual COGS</div></div>'
++'<div class="stat"><div class="v">'+money(inv)+'</div><div class="k">Avg inventory</div></div>'
++'<div class="stat"><div class="v">'+(turns>=4?'Efficient':(turns>=2?'Moderate':'Slow'))+'</div><div class="k">Efficiency</div></div></div>';
+document.getElementById('res').innerHTML=html;document.getElementById('res').classList.add('show');}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Inventory Turnover Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://denrod25-del.github.io/marketing-calculators/inventory-turnover-calculator/","description":"Free inventory turnover calculator. Enter cost of goods sold and average inventory to get your turnover ratio and days of inventory on hand."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate inventory turnover?","acceptedAnswer":{"@type":"Answer","text":"Divide cost of goods sold by average inventory value. $500,000 COGS on $100,000 average inventory is 5 turns."}},{"@type":"Question","name":"What are days of inventory on hand?","acceptedAnswer":{"@type":"Answer","text":"365 divided by your turnover ratio — the average number of days stock sits before it sells."}},{"@type":"Question","name":"What is a good inventory turnover?","acceptedAnswer":{"@type":"Answer","text":"It's industry-specific. Grocery and fast fashion turn many times a year; big-ticket goods turn far less. Compare within your sector."}}]}</script>
+</body>
+</html>
